@@ -1,0 +1,6 @@
+framework module Pods_UltraDrawerView_Tests {
+  umbrella header "Pods-UltraDrawerView_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

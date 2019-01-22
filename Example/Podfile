@@ -1,0 +1,11 @@
+use_frameworks!
+
+platform :ios, '9.3'
+
+target 'UltraDrawerView_Example' do
+  pod 'UltraDrawerView', :path => '../'
+
+  target 'UltraDrawerView_Tests' do
+    inherit! :search_paths
+  end
+end

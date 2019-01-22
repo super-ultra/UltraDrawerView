@@ -1,0 +1,6 @@
+framework module UltraDrawerView {
+  umbrella header "UltraDrawerView-umbrella.h"
+
+  export *
+  module * { export * }
+}
