@@ -88,7 +88,7 @@ open class SnappingView: UIView {
         content.addListener(self)
         
         containerView.addSubview(headerView)
-        headerView.addGestureRecognizer(headerPanRecognizer)
+        containerView.addGestureRecognizer(headerPanRecognizer)
         headerPanRecognizer.addTarget(self, action: #selector(handleHeaderPanRecognizer))
         
         setupLayout()
