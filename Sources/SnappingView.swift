@@ -1,10 +1,18 @@
 import UIKit
 import pop
 
+
+/// SnappingViewAnimation allows to control targetOrigin during animation
+public protocol SnappingViewAnimation: class {
+    var targetOrigin: CGFloat { get set }
+    var isDone: Bool { get }
+}
+
 public protocol SnappingViewListener: class {
     func snappingView(_ snappingView: SnappingView, willBeginUpdatingOrigin origin: CGFloat, source: DrawerOriginChangeSource)
     func snappingView(_ snappingView: SnappingView, didUpdateOrigin origin: CGFloat, source: DrawerOriginChangeSource)
     func snappingView(_ snappingView: SnappingView, didEndUpdatingOrigin origin: CGFloat, source: DrawerOriginChangeSource)
+    func snappingView(_ snappingView: SnappingView, willBeginAnimation animation: SnappingViewAnimation, source: DrawerOriginChangeSource)
 }
 
 open class SnappingView: UIView {
@@ -215,6 +223,8 @@ open class SnappingView: UIView {
         return target
     }
     
+    // MARK: - Private: Anchors
+    
     private func selectNextAnchor(to anchor: CGFloat, velocity: CGFloat) -> CGFloat {
         if velocity == 0 || anchors.isEmpty {
             return anchor
@@ -280,14 +290,17 @@ open class SnappingView: UIView {
             self?.notifyDidEndUpdatingOrigin(with: source)
             completion?(finished)
         }
-
+        
+        let animationSession = SnappingViewAnimationImpl(animation: animation)
+        notifier.forEach { $0.snappingView(self, willBeginAnimation: animationSession, source: source) }
+        
         pop_add(animation, forKey: Static.originAnimationKey)
     }
     
     private func stopOriginAnimation() {
         pop_removeAnimation(forKey: Static.originAnimationKey)
     }
-
+    
 }
 
 extension SnappingView: DrawerViewContentListener {
@@ -351,6 +364,42 @@ extension SnappingView: DrawerViewContentListener {
         targetContentOffset.pointee = drawerViewContent.contentOffset
         
         moveOriginToTheNearestAnchor(withVelocity: -velocity.y, source: .contentInteraction)
+    }
+    
+}
+
+private class SnappingViewAnimationImpl: NSObject, SnappingViewAnimation, POPAnimationDelegate {
+
+    init(animation: POPSpringAnimation) {
+        self.animation = animation
+        self.isDone = false
+        
+        super.init()
+        
+        animation.delegate = self
+    }
+    
+    private let animation: POPSpringAnimation
+    
+    // MARK: - SnappingViewAnimation
+    
+    var targetOrigin: CGFloat {
+        get {
+            return (animation.toValue as? CGFloat) ?? 0
+        }
+        set {
+            if !isDone {
+                animation.toValue = newValue
+            }
+        }
+    }
+    
+    private(set) var isDone: Bool
+    
+    // MARK: - POPAnimationDelegate
+    
+    func pop_animationDidStop(_ anim: POPAnimation!, finished: Bool) {
+        isDone = true
     }
     
 }

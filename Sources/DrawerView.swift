@@ -193,7 +193,9 @@ open class DrawerView: UIView {
         
         updateAnchors()
         
-        if let state = state, !snappingView.isDragging {
+        if let animationSession = animationSession_, let state = animationSession.targetState {
+            animationSession.animation.targetOrigin = origin(for: state)
+        } else if let state = state, !snappingView.isDragging {
             setState(state, animated: false)
         }
     }
@@ -369,6 +371,20 @@ open class DrawerView: UIView {
         return PositionDependencies(boundsHeight: bounds.height, headerHeight: headerView.frame.height,
             safeAreaInsets: getSafeAreaInsets())
     }
+    
+    // MARK: - Private: Animation
+    
+    class AnimationSession {
+        let animation: SnappingViewAnimation
+        var targetState: State?
+        
+        init(animation: SnappingViewAnimation, targetState: State?) {
+            self.animation = animation
+            self.targetState = targetState
+        }
+    }
+    
+    var animationSession_: AnimationSession? = nil
 
 }
 
@@ -388,13 +404,21 @@ extension DrawerView: SnappingViewListener {
         notifier.forEach { $0.drawerView(self, didUpdateOrigin: origin, source: source) }
     }
     
+    public func snappingView(_ snappingView: SnappingView, willBeginAnimation animation: SnappingViewAnimation,
+        source: DrawerOriginChangeSource)
+    {
+        animationSession_ = AnimationSession(animation: animation, targetState: state(forOrigin: animation.targetOrigin))
+    }
+
     public func snappingView(_ snappingView: SnappingView, didEndUpdatingOrigin origin: CGFloat,
         source: DrawerOriginChangeSource)
     {
         if let newState = state(forOrigin: origin), source == .contentInteraction || source == .headerInteraction {
             state_ = newState
         }
-    
+        
+        animationSession_ = nil
+        
         notifier.forEach { $0.drawerView(self, didEndUpdatingOrigin: origin, source: source) }
     }
     
