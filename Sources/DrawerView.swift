@@ -39,23 +39,31 @@ open class DrawerView: UIView {
         /// For iOS 10 it contains only status bar.
         public var ignoresSafeArea: Bool
         
-        init(offset: CGFloat, edge: Edge, point: Point = .drawerOrigin, ignoresSafeArea: Bool = false) {
+        /// Indicates whether or not the drawer positions should be constrained by the content size.
+        public var ignoresContentSize: Bool
+        
+        public init(offset: CGFloat, edge: Edge, point: Point = .drawerOrigin, ignoresSafeArea: Bool = false,
+            ignoresContentSize: Bool = true)
+        {
             self.offset = offset
             self.edge = edge
             self.point = point
             self.ignoresSafeArea = ignoresSafeArea
+            self.ignoresContentSize = ignoresContentSize
         }
         
         public static func fromTop(_ offset: CGFloat, relativeTo point: Point = .drawerOrigin,
-            ignoresSafeArea: Bool = false) -> RelativePosition
+            ignoresSafeArea: Bool = false, ignoresContentSize: Bool = true) -> RelativePosition
         {
-            return RelativePosition(offset: offset, edge: .top, point: point, ignoresSafeArea: ignoresSafeArea)
+            return RelativePosition(offset: offset, edge: .top, point: point, ignoresSafeArea: ignoresSafeArea,
+                ignoresContentSize: ignoresContentSize)
         }
         
         public static func fromBottom(_ offset: CGFloat, relativeTo point: Point = .drawerOrigin,
-            ignoresSafeArea: Bool = false) -> RelativePosition
+            ignoresSafeArea: Bool = false, ignoresContentSize: Bool = true) -> RelativePosition
         {
-            return RelativePosition(offset: offset, edge: .bottom, point: point, ignoresSafeArea: ignoresSafeArea)
+            return RelativePosition(offset: offset, edge: .bottom, point: point, ignoresSafeArea: ignoresSafeArea,
+                ignoresContentSize: ignoresContentSize)
         }
     }
     
@@ -110,13 +118,6 @@ open class DrawerView: UIView {
     }
     
     open var bottomPosition: RelativePosition = .fromBottom(0, relativeTo: .contentOrigin) {
-        didSet {
-            updateAnchors()
-        }
-    }
-    
-    /// Indicates whether or not the drawer positions should be constrained by the content size
-    open var isConstrainedByContentSize: Bool = true {
         didSet {
             updateAnchors()
         }
@@ -323,7 +324,7 @@ open class DrawerView: UIView {
     private func targetOrigin(for position: RelativePosition, positionDependencies: PositionDependencies) -> CGFloat {
         let candidate = DrawerView.targetOriginIgnoringContentSize(for: position, positionDependencies: positionDependencies)
         
-        if !isConstrainedByContentSize {
+        if position.ignoresContentSize {
             return candidate
         } else {
             let totalHeight = content.contentSize.height + content.contentInset.top + content.contentInset.bottom
