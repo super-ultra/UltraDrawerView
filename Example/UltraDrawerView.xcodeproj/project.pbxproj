@@ -319,7 +319,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-UltraDrawerView_Example/Pods-UltraDrawerView_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-UltraDrawerView_Example/Pods-UltraDrawerView_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/UltraDrawerView/UltraDrawerView.framework",
 				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
@@ -330,7 +330,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UltraDrawerView_Example/Pods-UltraDrawerView_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UltraDrawerView_Example/Pods-UltraDrawerView_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A43BD5C726CE7FE0D278CECC /* [CP] Check Pods Manifest.lock */ = {
