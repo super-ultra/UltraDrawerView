@@ -1,6 +1,6 @@
 PODS:
   - pop (1.0.12)
-  - UltraDrawerView (0.2.0):
+  - UltraDrawerView (0.2.1):
     - pop (~> 1.0)
 
 DEPENDENCIES:
@@ -16,7 +16,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
-  UltraDrawerView: 3ba171cd6b6c28e0f55d98be6c95b5f659b4860b
+  UltraDrawerView: e140b750bc5455815a4e8d693717933b3ff6f51c
 
 PODFILE CHECKSUM: a5aba7fff066c72788a23c6f1cb64ba3010f4e56
 

@@ -5,6 +5,7 @@ public protocol DrawerViewListener: class {
     func drawerView(_ drawerView: DrawerView, didUpdateOrigin origin: CGFloat, source: DrawerOriginChangeSource)
     func drawerView(_ drawerView: DrawerView, didEndUpdatingOrigin origin: CGFloat, source: DrawerOriginChangeSource)
     func drawerView(_ drawerView: DrawerView, didChangeState state: DrawerView.State?)
+    func drawerView(_ drawerView: DrawerView, willBeginAnimationToState state: DrawerView.State?, source: DrawerOriginChangeSource)
 }
 
 open class DrawerView: UIView {
@@ -408,7 +409,10 @@ extension DrawerView: SnappingViewListener {
     public func snappingView(_ snappingView: SnappingView, willBeginAnimation animation: SnappingViewAnimation,
         source: DrawerOriginChangeSource)
     {
-        animationSession_ = AnimationSession(animation: animation, targetState: state(forOrigin: animation.targetOrigin))
+        let targetState = state(forOrigin: animation.targetOrigin)
+        animationSession_ = AnimationSession(animation: animation, targetState: targetState)
+        
+        notifier.forEach { $0.drawerView(self, willBeginAnimationToState: targetState, source: source) }
     }
 
     public func snappingView(_ snappingView: SnappingView, didEndUpdatingOrigin origin: CGFloat,
