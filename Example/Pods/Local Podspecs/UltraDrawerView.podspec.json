@@ -1,6 +1,6 @@
 {
   "name": "UltraDrawerView",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "summary": "Simple swipe up view",
   "homepage": "https://github.com/super-ultra/UltraDrawerView",
   "license": {
@@ -8,21 +8,22 @@
     "file": "LICENSE"
   },
   "authors": {
-    "Ilya Lobanov": "owlefy@gmail.com"
+    "Ilya Lobanov": "ultra@imap.cc"
   },
   "source": {
     "git": "https://github.com/super-ultra/UltraDrawerView.git",
-    "tag": "0.2.1"
+    "tag": "0.2.2"
   },
   "platforms": {
     "ios": "9.0"
   },
-  "swift_version": "4.2",
+  "swift_versions": "4.2",
   "source_files": "Sources/**/*",
   "frameworks": "UIKit",
   "dependencies": {
     "pop": [
       "~> 1.0"
     ]
-  }
+  },
+  "swift_version": "4.2"
 }

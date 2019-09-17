@@ -49,6 +49,8 @@ final class ShapeCell: UITableViewCell {
     private var info: Info? = nil
     
     private func setupViews() {
+        backgroundColor = .white
+        
         addSubview(shapeButton)
         shapeButton.addTarget(self, action: #selector(handleShapeButton), for: .touchUpInside)
         
@@ -60,6 +62,7 @@ final class ShapeCell: UITableViewCell {
         addSubview(titleLabel)
         titleLabel.font = .boldSystemFont(ofSize: UIFont.labelFontSize)
         titleLabel.numberOfLines = 0
+        titleLabel.textColor = .black
         
         addSubview(subtitleLabel)
         subtitleLabel.font = .systemFont(ofSize: UIFont.systemFontSize)

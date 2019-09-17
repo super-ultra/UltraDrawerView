@@ -192,7 +192,7 @@ open class SnappingView: UIView {
             let translation = sender.translation(in: headerView)
         
             if case .dragging(let initialOrigin) = headerState {
-                let newOrigin = trimTargetHeaderOrigin(initialOrigin + translation.y)
+                let newOrigin = clampTargetHeaderOrigin(initialOrigin + translation.y)
                 setOrigin(newOrigin, source: .headerInteraction)
             }
         
@@ -212,15 +212,20 @@ open class SnappingView: UIView {
         }
     }
     
-    private func trimTargetHeaderOrigin(_ target: CGFloat) -> CGFloat {
-        if let limits = anchorLimits {
-            if target < limits.lowerBound {
-                return limits.lowerBound - sqrt(limits.lowerBound - target)
-            } else if target > limits.upperBound {
-                return limits.upperBound + sqrt(target - limits.upperBound)
-            }
+    private func clampTargetHeaderOrigin(_ target: CGFloat) -> CGFloat {
+        guard let limits = anchorLimits else { return target }
+        
+        if target < limits.lowerBound {
+            let diff = limits.lowerBound - target
+            let dim = abs(limits.lowerBound)
+            return limits.lowerBound - rubberBandClamp(diff, dim: dim)
+        } else if target > limits.upperBound {
+            let diff = target - limits.upperBound
+            let dim = abs(bounds.height - limits.upperBound)
+            return limits.upperBound + rubberBandClamp(diff, dim: dim)
+        } else {
+            return target
         }
-        return target
     }
     
     // MARK: - Private: Anchors

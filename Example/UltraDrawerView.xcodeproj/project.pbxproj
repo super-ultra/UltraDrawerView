@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		30E6A3B077942C0B70B231BC /* Pods_UltraDrawerView_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93F4EA20FF33247DBE5CBED4 /* Pods_UltraDrawerView_Example.framework */; };
+		276C5F923CE63E425330447C /* Pods_UltraDrawerView_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 428A6189F0370F58FA6140E9 /* Pods_UltraDrawerView_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ShapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ShapeViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		880FA27CC44909FF394826E4 /* Pods_UltraDrawerView_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6350111A2135FB6E1CED83F8 /* Pods_UltraDrawerView_Tests.framework */; };
+		6E993266958A5D2676D079F8 /* Pods_UltraDrawerView_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 476FA20D00E65FCC8C0A00DB /* Pods_UltraDrawerView_Example.framework */; };
 		B12625FD2128DE7D00DBBDFA /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12625FC2128DE7D00DBBDFA /* UIColor+Utils.swift */; };
 		B147864D212A23250042CFA9 /* ShapeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B147864C212A23250042CFA9 /* ShapeHeaderView.swift */; };
 		B147864F212A25280042CFA9 /* ShapeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B147864E212A25280042CFA9 /* ShapeCell.swift */; };
@@ -34,8 +34,8 @@
 
 /* Begin PBXFileReference section */
 		06F5DA8CAC4EE8683D4D1754 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		324EBD20C911990D48D1C210 /* Pods-UltraDrawerView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UltraDrawerView_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UltraDrawerView_Example/Pods-UltraDrawerView_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		45511CB97A3F8E7E64A17F94 /* Pods-UltraDrawerView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UltraDrawerView_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UltraDrawerView_Tests/Pods-UltraDrawerView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		428A6189F0370F58FA6140E9 /* Pods_UltraDrawerView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UltraDrawerView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		476FA20D00E65FCC8C0A00DB /* Pods_UltraDrawerView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UltraDrawerView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* UltraDrawerView_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltraDrawerView_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,8 +46,7 @@
 		607FACE51AFB9204008FA782 /* UltraDrawerView_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UltraDrawerView_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		6350111A2135FB6E1CED83F8 /* Pods_UltraDrawerView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UltraDrawerView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		93F4EA20FF33247DBE5CBED4 /* Pods_UltraDrawerView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UltraDrawerView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		61577068684EAC666DD1302D /* Pods-UltraDrawerView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UltraDrawerView_Tests.release.xcconfig"; path = "Target Support Files/Pods-UltraDrawerView_Tests/Pods-UltraDrawerView_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		98B7C15332F9CC9E1E763DD5 /* UltraDrawerView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = UltraDrawerView.podspec; path = ../UltraDrawerView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AF3DC9C31C5F6025401A1BBF /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		B12625FC2128DE7D00DBBDFA /* UIColor+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
@@ -55,8 +54,9 @@
 		B147864E212A25280042CFA9 /* ShapeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeCell.swift; sourceTree = "<group>"; };
 		B1E838B6212AC7530096B227 /* UIBezierPath+Polygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBezierPath+Polygon.swift"; sourceTree = "<group>"; };
 		B1EB167A21442D90005F4612 /* ShapeCell+DefaultInfos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShapeCell+DefaultInfos.swift"; sourceTree = "<group>"; };
-		BB04B4FDDB01A9F3E0709D15 /* Pods-UltraDrawerView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UltraDrawerView_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UltraDrawerView_Tests/Pods-UltraDrawerView_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		E3DE5607F648BE7AEF1B53CC /* Pods-UltraDrawerView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UltraDrawerView_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-UltraDrawerView_Example/Pods-UltraDrawerView_Example.release.xcconfig"; sourceTree = "<group>"; };
+		BD86C5D8EBD48C8C72969633 /* Pods-UltraDrawerView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UltraDrawerView_Tests.debug.xcconfig"; path = "Target Support Files/Pods-UltraDrawerView_Tests/Pods-UltraDrawerView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		C3EA3ADBE206F9108EFA0A89 /* Pods-UltraDrawerView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UltraDrawerView_Example.release.xcconfig"; path = "Target Support Files/Pods-UltraDrawerView_Example/Pods-UltraDrawerView_Example.release.xcconfig"; sourceTree = "<group>"; };
+		CF30D79413316488AF77AB57 /* Pods-UltraDrawerView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UltraDrawerView_Example.debug.xcconfig"; path = "Target Support Files/Pods-UltraDrawerView_Example/Pods-UltraDrawerView_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30E6A3B077942C0B70B231BC /* Pods_UltraDrawerView_Example.framework in Frameworks */,
+				6E993266958A5D2676D079F8 /* Pods_UltraDrawerView_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,22 +72,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				880FA27CC44909FF394826E4 /* Pods_UltraDrawerView_Tests.framework in Frameworks */,
+				276C5F923CE63E425330447C /* Pods_UltraDrawerView_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		25A3ADE35A1ABFFDED5E5300 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				93F4EA20FF33247DBE5CBED4 /* Pods_UltraDrawerView_Example.framework */,
-				6350111A2135FB6E1CED83F8 /* Pods_UltraDrawerView_Tests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -95,8 +86,8 @@
 				607FACD21AFB9204008FA782 /* Example for UltraDrawerView */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
-				CA22CF7ADB7D7025DFDF32DD /* Pods */,
-				25A3ADE35A1ABFFDED5E5300 /* Frameworks */,
+				65727038F55B82BDF83622DE /* Pods */,
+				C03C9ED8E0EB4C148C2EA765 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,6 +148,17 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		65727038F55B82BDF83622DE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CF30D79413316488AF77AB57 /* Pods-UltraDrawerView_Example.debug.xcconfig */,
+				C3EA3ADBE206F9108EFA0A89 /* Pods-UltraDrawerView_Example.release.xcconfig */,
+				BD86C5D8EBD48C8C72969633 /* Pods-UltraDrawerView_Tests.debug.xcconfig */,
+				61577068684EAC666DD1302D /* Pods-UltraDrawerView_Tests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		B12625FE2128DFC100DBBDFA /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,15 +181,13 @@
 			path = ShapeViewController;
 			sourceTree = "<group>";
 		};
-		CA22CF7ADB7D7025DFDF32DD /* Pods */ = {
+		C03C9ED8E0EB4C148C2EA765 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				324EBD20C911990D48D1C210 /* Pods-UltraDrawerView_Example.debug.xcconfig */,
-				E3DE5607F648BE7AEF1B53CC /* Pods-UltraDrawerView_Example.release.xcconfig */,
-				45511CB97A3F8E7E64A17F94 /* Pods-UltraDrawerView_Tests.debug.xcconfig */,
-				BB04B4FDDB01A9F3E0709D15 /* Pods-UltraDrawerView_Tests.release.xcconfig */,
+				476FA20D00E65FCC8C0A00DB /* Pods_UltraDrawerView_Example.framework */,
+				428A6189F0370F58FA6140E9 /* Pods_UltraDrawerView_Tests.framework */,
 			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,11 +197,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "UltraDrawerView_Example" */;
 			buildPhases = (
-				6ABEBCC85C2C3BF967460BF0 /* [CP] Check Pods Manifest.lock */,
+				714CEA1B87BBA98577BB1CE5 /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				9504E62AC35881D730017626 /* [CP] Embed Pods Frameworks */,
+				1955AD833E359BD71E0EAD13 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -216,7 +216,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "UltraDrawerView_Tests" */;
 			buildPhases = (
-				A43BD5C726CE7FE0D278CECC /* [CP] Check Pods Manifest.lock */,
+				EB9472A3627284141619170F /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
@@ -295,25 +295,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6ABEBCC85C2C3BF967460BF0 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-UltraDrawerView_Example-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9504E62AC35881D730017626 /* [CP] Embed Pods Frameworks */ = {
+		1955AD833E359BD71E0EAD13 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -333,16 +315,42 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UltraDrawerView_Example/Pods-UltraDrawerView_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A43BD5C726CE7FE0D278CECC /* [CP] Check Pods Manifest.lock */ = {
+		714CEA1B87BBA98577BB1CE5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UltraDrawerView_Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB9472A3627284141619170F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-UltraDrawerView_Tests-checkManifestLockResult.txt",
 			);
@@ -507,16 +515,16 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 324EBD20C911990D48D1C210 /* Pods-UltraDrawerView_Example.debug.xcconfig */;
+			baseConfigurationReference = CF30D79413316488AF77AB57 /* Pods-UltraDrawerView_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = UltraDrawerView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.example.UltraDrawerView-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -526,16 +534,16 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E3DE5607F648BE7AEF1B53CC /* Pods-UltraDrawerView_Example.release.xcconfig */;
+			baseConfigurationReference = C3EA3ADBE206F9108EFA0A89 /* Pods-UltraDrawerView_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = UltraDrawerView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.example.UltraDrawerView-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -545,7 +553,7 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 45511CB97A3F8E7E64A17F94 /* Pods-UltraDrawerView_Tests.debug.xcconfig */;
+			baseConfigurationReference = BD86C5D8EBD48C8C72969633 /* Pods-UltraDrawerView_Tests.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = JY9PYCJU7F;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -568,7 +576,7 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB04B4FDDB01A9F3E0709D15 /* Pods-UltraDrawerView_Tests.release.xcconfig */;
+			baseConfigurationReference = 61577068684EAC666DD1302D /* Pods-UltraDrawerView_Tests.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = JY9PYCJU7F;
 				FRAMEWORK_SEARCH_PATHS = (
