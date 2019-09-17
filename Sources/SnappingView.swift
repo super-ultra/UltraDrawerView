@@ -209,6 +209,8 @@ open class SnappingView: UIView {
         
         case .possible:
             break
+        @unknown default:
+            fatalError()
         }
     }
     
@@ -237,7 +239,7 @@ open class SnappingView: UIView {
         
         let sortedAnchors = anchors.sorted()
         
-        if let anchorIndex = sortedAnchors.index(of: anchor) {
+        if let anchorIndex = sortedAnchors.firstIndex(of: anchor) {
             let nextIndex = velocity > 0 ? anchorIndex + 1 : anchorIndex - 1
             let clampedIndex = nextIndex.clamped(to: 0 ... anchors.count - 1)
             return sortedAnchors[clampedIndex]

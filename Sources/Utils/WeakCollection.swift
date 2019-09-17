@@ -50,7 +50,7 @@ internal struct WeakCollection<T> {
     }
     
     private func index(of elem: T) -> Int? {
-        return elems.index(where: { $0.object === elem as AnyObject })
+        return elems.firstIndex(where: { $0.object === elem as AnyObject })
     }
     
 }
