@@ -1,6 +1,6 @@
 {
   "name": "UltraDrawerView",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "summary": "Simple swipe up view",
   "homepage": "https://github.com/super-ultra/UltraDrawerView",
   "license": {
@@ -8,11 +8,11 @@
     "file": "LICENSE"
   },
   "authors": {
-    "Ilya Lobanov": "ultra@imap.cc"
+    "Ilya Lobanov": "esskeetit@imap.cc"
   },
   "source": {
     "git": "https://github.com/super-ultra/UltraDrawerView.git",
-    "tag": "0.2.2"
+    "tag": "0.2.3"
   },
   "platforms": {
     "ios": "9.0"
