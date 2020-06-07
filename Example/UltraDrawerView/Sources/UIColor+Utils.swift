@@ -30,6 +30,7 @@ internal extension UIColor {
     static var randomLight: UIColor {
         return UIColor(red: 0.8 + 0.2 * rand(), green: 0.8 + 0.2  * rand(), blue: 0.8 + 0.2 * rand(), alpha: 1.0)
     }
+    
     static var randomExtraLight: UIColor {
         return UIColor(red: 0.92 + 0.08 * rand(), green: 0.92 + 0.08  * rand(), blue: 0.92 + 0.08 * rand(), alpha: 1.0)
     }
