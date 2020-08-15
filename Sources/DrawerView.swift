@@ -79,6 +79,9 @@ open class DrawerView: UIView {
             self.safeAreaInsets = safeAreaInsets
         }
     }
+    
+    /// Indicates whether or not the drawer fades its content in bottom state
+    public var shouldFadeInBottomState: Bool = true
 
     public init(content: Content, headerView: UIView) {
         snappingView = SnappingView(content: content, headerView: headerView)
@@ -259,7 +262,7 @@ open class DrawerView: UIView {
     }
     
     private func updateContentVisibility() {
-        guard #available(iOS 11.0, *), safeAreaInsets.bottom > 0 else {
+        guard #available(iOS 11.0, *), shouldFadeInBottomState, safeAreaInsets.bottom > 0 else {
             content.view.alpha = 1
             return
         }
