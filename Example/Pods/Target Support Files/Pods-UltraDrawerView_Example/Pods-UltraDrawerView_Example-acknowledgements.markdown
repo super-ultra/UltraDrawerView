@@ -3,7 +3,7 @@ This application makes use of the following third party libraries:
 
 ## UltraDrawerView
 
-Copyright (c) 2019 Ilya Lobanov <owlefy@gmail.com>
+Copyright (c) 2019 Ilya Lobanov
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
