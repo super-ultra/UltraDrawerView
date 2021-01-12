@@ -51,7 +51,7 @@ final class ShapeCell: UITableViewCell {
     private func setupViews() {
         backgroundColor = .white
         
-        addSubview(shapeButton)
+        contentView.addSubview(shapeButton)
         shapeButton.addTarget(self, action: #selector(handleShapeButton), for: .touchUpInside)
         
         shapeButton.layer.addSublayer(shapeLayer)
@@ -59,12 +59,12 @@ final class ShapeCell: UITableViewCell {
         shapeLayer.lineJoin = .round
         updateShapeColors()
         
-        addSubview(titleLabel)
+        contentView.addSubview(titleLabel)
         titleLabel.font = .boldSystemFont(ofSize: UIFont.labelFontSize)
         titleLabel.numberOfLines = 0
         titleLabel.textColor = .black
         
-        addSubview(subtitleLabel)
+        contentView.addSubview(subtitleLabel)
         subtitleLabel.font = .systemFont(ofSize: UIFont.systemFontSize)
         subtitleLabel.numberOfLines = 0
         subtitleLabel.textColor = .darkGray
@@ -79,18 +79,18 @@ final class ShapeCell: UITableViewCell {
         shapeButton.translatesAutoresizingMaskIntoConstraints = false
         shapeButton.widthAnchor.constraint(equalToConstant: shapeSize).isActive = true
         shapeButton.heightAnchor.constraint(equalToConstant: shapeSize).isActive = true
-        shapeButton.topAnchor.constraint(equalTo: topAnchor, constant: inset).isActive = true
-        shapeButton.leftAnchor.constraint(equalTo: leftAnchor, constant: inset).isActive = true
+        shapeButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: inset).isActive = true
+        shapeButton.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: inset).isActive = true
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.leftAnchor.constraint(equalTo: shapeButton.rightAnchor, constant: inset).isActive = true
-        titleLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -inset).isActive = true
-        titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: inset).isActive = true
+        titleLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -inset).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: inset).isActive = true
         
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
         subtitleLabel.leftAnchor.constraint(equalTo: shapeButton.rightAnchor, constant: inset).isActive = true
-        subtitleLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -inset).isActive = true
-        subtitleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -inset).isActive = true
+        subtitleLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -inset).isActive = true
+        subtitleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -inset).isActive = true
         subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8).isActive = true
     }
     
