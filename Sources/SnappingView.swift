@@ -46,6 +46,9 @@ open class SnappingView: UIView {
         }
     }
     
+    /// A Boolean value that controls whether the scroll view bounces past the edge of content and back again
+    open var bounces: Bool = true
+    
     public init(content: Content, headerView: UIView) {
         self.content = content
         self.headerView = headerView
@@ -218,13 +221,21 @@ open class SnappingView: UIView {
         guard let limits = anchorLimits else { return target }
         
         if target < limits.lowerBound {
-            let diff = limits.lowerBound - target
-            let dim = abs(limits.lowerBound)
-            return limits.lowerBound - rubberBandClamp(diff, dim: dim)
+            if bounces {
+                let diff = limits.lowerBound - target
+                let dim = abs(limits.lowerBound)
+                return limits.lowerBound - rubberBandClamp(diff, dim: dim)
+            } else {
+                return limits.lowerBound
+            }
         } else if target > limits.upperBound {
-            let diff = target - limits.upperBound
-            let dim = abs(bounds.height - limits.upperBound)
-            return limits.upperBound + rubberBandClamp(diff, dim: dim)
+            if bounces {
+                let diff = target - limits.upperBound
+                let dim = abs(bounds.height - limits.upperBound)
+                return limits.upperBound + rubberBandClamp(diff, dim: dim)
+            } else {
+                return limits.upperBound
+            }
         } else {
             return target
         }
@@ -343,7 +354,7 @@ extension SnappingView: DrawerViewContentListener {
             
             let newOrigin: CGFloat
             
-            if diff > 0 {
+            if diff > 0 && bounces {
                 newOrigin = origin + diff
             } else {
                 newOrigin = (origin + diff).clamped(to: limits)

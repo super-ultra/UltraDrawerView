@@ -82,6 +82,13 @@ open class DrawerView: UIView {
     
     /// Indicates whether or not the drawer fades its content in bottom state
     public var shouldFadeInBottomState: Bool = true
+    
+    /// A Boolean value that controls whether the scroll view bounces past the edge of content and back again
+    public var bounces: Bool = true {
+        didSet {
+            snappingView.bounces = bounces
+        }
+    }
 
     public init(content: Content, headerView: UIView) {
         snappingView = SnappingView(content: content, headerView: headerView)
