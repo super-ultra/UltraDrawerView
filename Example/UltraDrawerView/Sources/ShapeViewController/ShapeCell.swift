@@ -1,5 +1,5 @@
 import UIKit
-import pop
+
 
 final class ShapeCell: UITableViewCell {
 
@@ -99,18 +99,8 @@ final class ShapeCell: UITableViewCell {
         shapeLayer.strokeColor = UIColor.randomDark.cgColor
     }
     
-    private func bounceShape() {
-        let animation: POPSpringAnimation = POPSpringAnimation(propertyNamed: kPOPLayerScaleXY)
-        animation.velocity = CGPoint(x: 8, y: 8)
-        animation.springBounciness = 16
-        animation.fromValue = CGPoint(x: 1.1, y: 1.1)
-        animation.toValue = CGPoint(x: 1, y: 1)
-        shapeLayer.pop_add(animation, forKey: kPOPLayerScaleXY)
-    }
-    
     @objc private func handleShapeButton() {
         updateShapeColors()
-        bounceShape()
     }
 
 }

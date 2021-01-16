@@ -1,22 +1,15 @@
 PODS:
-  - pop (1.0.12)
-  - UltraDrawerView (0.3.0):
-    - pop (~> 1.0)
+  - UltraDrawerView (0.3.0)
 
 DEPENDENCIES:
   - UltraDrawerView (from `../`)
-
-SPEC REPOS:
-  trunk:
-    - pop
 
 EXTERNAL SOURCES:
   UltraDrawerView:
     :path: "../"
 
 SPEC CHECKSUMS:
-  pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
-  UltraDrawerView: 942254e5668ecfbc72d98b869cb4cbc30a89422f
+  UltraDrawerView: 55ec1b1fec1f8aafbe65ef3f5299d653ab397ded
 
 PODFILE CHECKSUM: cc087438ce029e9b937501385b99a39651026ba8
 

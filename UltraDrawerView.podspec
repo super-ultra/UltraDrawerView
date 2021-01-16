@@ -10,5 +10,4 @@ Pod::Spec.new do |s|
   s.swift_version = '5.0'
   s.source_files = 'Sources/**/*'
   s.frameworks = 'UIKit'
-  s.dependency 'pop', '~> 1.0'
 end
