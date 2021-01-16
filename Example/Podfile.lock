@@ -7,7 +7,7 @@ DEPENDENCIES:
   - UltraDrawerView (from `../`)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - pop
 
 EXTERNAL SOURCES:
@@ -18,6 +18,6 @@ SPEC CHECKSUMS:
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   UltraDrawerView: 942254e5668ecfbc72d98b869cb4cbc30a89422f
 
-PODFILE CHECKSUM: d21333f735fc55b4aa7f76b50c2fc944d9acd4fe
+PODFILE CHECKSUM: cc087438ce029e9b937501385b99a39651026ba8
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1
