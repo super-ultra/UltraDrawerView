@@ -7,48 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00B638CC150D4F904DA7E0428B140417 /* SVPrivateScrollDelegateProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 83DB17EF35C77659D4CE8FFB87916A2D /* SVPrivateScrollDelegateProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0671F2091881D668C55529FEF92E0F96 /* RubberBand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FDE4F5DE2F1E60D912F197B1883FFA /* RubberBand.swift */; };
-		06B56DD6B3FF2EC986D0CC623A2600D2 /* FloatingPoint+Projection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AA8104C69270D8554F2C27B1361272 /* FloatingPoint+Projection.swift */; };
-		0B350CE2F7FDB49C68F4CED518AFF99A /* DrawerViewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2030C4860F2D69A912BF1F2B5F1F05FD /* DrawerViewContent.swift */; };
-		20F67A55A8A84687C161EAA8DC50DF9B /* SVPrivateScrollDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F3E21076847172A71A92C7B68A25FA /* SVPrivateScrollDelegateProxy.m */; };
-		21F944E69E476BBD677C512EEE5EB726 /* TimerAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155BDBFEC0DCC59F9F5E67853C72E68A /* TimerAnimation.swift */; };
-		2B1F212D1DAF9EC93FEDC21AFAC63F06 /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021EFF1CDA30E8F478B1714D9D0CC026 /* Notifier.swift */; };
-		3FFCF025324ABF184534B0B0C36CDAF5 /* DrawerOriginChangeSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F9CEC271B498FA6F8659A0CA5FBC8 /* DrawerOriginChangeSource.swift */; };
-		522D02F3E9D8517CECBCE6CCE7AFD6EE /* Collection+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEDE5AF5CC592B7868713CDF0436D5C /* Collection+Utils.swift */; };
+		06E6D984B5DC5CCE232EC8C1EFABB165 /* SVPrivateScrollDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F3E21076847172A71A92C7B68A25FA /* SVPrivateScrollDelegateProxy.m */; };
+		07B1423C261228F1AA36EE91F549F512 /* TimingParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384B6F385D4F19CB20FC9D52E75CB5D5 /* TimingParameters.swift */; };
+		0F79455BD7B4238DBE93FC182804F00B /* Collection+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB051FD860B218BFF5A9C88191BAB /* Collection+Utils.swift */; };
+		2B2EDCF7ABC60C38A6756757168237E2 /* DrawerView+UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2ED400244ED6BE52A6B26A05DE69E6 /* DrawerView+UIScrollView.swift */; };
+		495FC7F0C03EFC06B98AF64EE5D25359 /* DrawerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5231ED9DE295FCADBC6B912CDA5994 /* DrawerView.swift */; };
 		523218D14A54D7CDB74058F6BE3F4FB2 /* Pods-UltraDrawerView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FBB08C85D6742EA828C7961CF2BF4578 /* Pods-UltraDrawerView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5602686FC3CEED3C6DE04A946A4F9CE9 /* ScrollDrawerViewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4451CE8EF2553ABC813F119E39DDD /* ScrollDrawerViewContent.swift */; };
-		5D210C23D68B9D25C3CA147B17D7EC76 /* DrawerView+UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F75962F22BDE887FC6712DD64015AF /* DrawerView+UIScrollView.swift */; };
+		53F3A773202C5175C42A21DAEA766EA8 /* RubberBand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E27D6D5FD55DB55413AD631289FB11 /* RubberBand.swift */; };
+		5C1116C4E1DE93495DB01E29855DB9A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
 		5D96FF3CC39AE19675E2EAE0D6566746 /* Pods-UltraDrawerView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2227798FAA9A9FA8B0906B94C3029714 /* Pods-UltraDrawerView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		60B910DB8662BE6887941572ACC57488 /* UltraDrawerView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ED338207DFF7C1903D474F21C3AEEFB1 /* UltraDrawerView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		643CFD4272B49386004260E3A92A6ABC /* TimingParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256A02135D8FBB9EC409FC17078020CA /* TimingParameters.swift */; };
-		70DFFADFE65C838CE91EDF6813755968 /* SpringTimingParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B0CC4966000F113FE1E2378533E7D9 /* SpringTimingParameters.swift */; };
+		61463D4E9B19D777B48038B49CD58259 /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CFAC4A398A70CE2C5A4D2DAE60DCAA /* Notifier.swift */; };
+		69055F1C26EFFEF76D6CED3F434E0D36 /* FloatingPoint+Projection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977945CCC5A55019958F33FA569A6EC7 /* FloatingPoint+Projection.swift */; };
+		6C78777D84BD99F569EDC47AD0CCC3C8 /* SpringTimingParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAC8EBD7DD7123859A6057CC229800A /* SpringTimingParameters.swift */; };
 		78F8A092FBCBE702FD33AE4DE2BA06F4 /* Pods-UltraDrawerView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9B67CFA4781E6F352A57191FE03134 /* Pods-UltraDrawerView_Tests-dummy.m */; };
-		7AE3DFADE8C9B8B3E4DBEA00156C8786 /* SnappingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B290BCD3382EB17CE3462B9CA8D8DB /* SnappingView.swift */; };
-		85793ABFF7A5B70D9C6C4C3D6E9B73C1 /* Clamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB5F3C10F2F69E5B0A649ABF5E5999D /* Clamp.swift */; };
-		8702ACAD7A49F3E9DF59354A91CA4B8D /* UIImage+Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2FB494847772BD0A6E4B8F535DB97B /* UIImage+Rounded.swift */; };
-		8B03FDBCA45DD8739BAD9D9BB2712A01 /* UltraDrawerView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B2055B8AFDA2F68825B4F1ACC462CC3 /* UltraDrawerView-dummy.m */; };
+		8BDF7A8A030B1E591072A83AC6656875 /* UltraDrawerView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B2055B8AFDA2F68825B4F1ACC462CC3 /* UltraDrawerView-dummy.m */; };
+		8FA438A6AC29206766B7BD3798317CEB /* ScrollDrawerViewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0816A598DE5DE09294941A71FD068B6 /* ScrollDrawerViewContent.swift */; };
 		960A0263DB500AB5A694C052F966E033 /* Pods-UltraDrawerView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FDAB4FE16D6576D66C3CA58713EAA3 /* Pods-UltraDrawerView_Example-dummy.m */; };
+		9E429D13379BC21F1C39AB2C99C43C09 /* WeakCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5E6A715CDF836CABFF9027DF792049 /* WeakCollection.swift */; };
+		9FA25BB73B31BE95F22FD85070869756 /* FloatingPoint+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6D91A5568FABD0CA2A20BD36B5083A /* FloatingPoint+Utils.swift */; };
+		A1E53EBF44551F79A31160AB15F8D301 /* Clamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067BB6238EDC4DBD16DF646FF636C206 /* Clamp.swift */; };
+		A55EB6DA7BDB70C176D642263F1F6680 /* DrawerOriginChangeSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933FA6C798C0DCDDD749CBEAC6D5716B /* DrawerOriginChangeSource.swift */; };
+		A7737C462F9606474D1D5D0E8B45B4E9 /* CornerRadiusMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349D48E770D3862544DF0F689735AF55 /* CornerRadiusMaskView.swift */; };
+		AA1F63D66961CD53CCEA0C8CA0260D1C /* UIImage+Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14288D0971C75DA32D1378F2B919810 /* UIImage+Rounded.swift */; };
 		AAF104ABA3C858D919E87C804AF9A9E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
-		ACC89C6E886C6FD37C009799667A5639 /* CGPoint+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD079EF5BE471DDF8E569E349E6AB2D /* CGPoint+Utils.swift */; };
-		AE219120524779D55E9DFA3138ECEA52 /* CornerRadiusMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC8B2F971EF944C775870E8E7E79EFB /* CornerRadiusMaskView.swift */; };
+		AC65AED16C7FF0C1E1A91A62D2897ED1 /* TimerAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FA678E78592F1CAD8F89B0AECE1973 /* TimerAnimation.swift */; };
+		AD62757B7FED7EAB4E24FA7F6F76EEFB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */; };
 		AEAD98C73A49C4BAFD2CB0659A300D59 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
-		B88548C00999B08DF18F27E2A251B7EA /* WeakCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392EDDC096D0FA8269108632FBC50298 /* WeakCollection.swift */; };
-		BA0DC2C596209BB301F02164DE8AB4FE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */; };
-		BF1F2E2431CBBAE7400266D7113E985E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
-		DC06C7F94F1457E9CC36E3745EB7FC44 /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54B27C71D60B56693828B72E7195E2 /* UIView+AutoLayout.swift */; };
-		FFB5CD8867B26E7253694989E1E784BE /* DrawerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279BFB9D09B3704459BE9636A9E49E9B /* DrawerView.swift */; };
+		B1F470F225B4BCC400C805DA /* SnappingViewSpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F470F125B4BCC400C805DA /* SnappingViewSpringAnimation.swift */; };
+		B691EED7695A77E572733B2E2131F0E9 /* DrawerViewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EF9C170DA35E3524AB3464303260D2 /* DrawerViewContent.swift */; };
+		CB0369922B36EFE1D48BC3C78EAED306 /* CGPoint+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D76D2D257C8E52117BAA1D509AEE58 /* CGPoint+Utils.swift */; };
+		E1FA8A3190539C3BC66DBE16182DEA56 /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF91FB07DFF88A415E70B7CF0CC60025 /* UIView+AutoLayout.swift */; };
+		E2909F5C4B221AD8451FC49AC61C5434 /* UltraDrawerView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ED338207DFF7C1903D474F21C3AEEFB1 /* UltraDrawerView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F0E2758BA2B7F50F7AE97F4B7A6B0C65 /* SnappingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03281061BE31E520F2B2BC1DEEAA103B /* SnappingView.swift */; };
+		F8E61FDE33A675430F2A201BEFBCAF22 /* SVPrivateScrollDelegateProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 83DB17EF35C77659D4CE8FFB87916A2D /* SVPrivateScrollDelegateProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		277DC6CC64171369B997E42C3E506F11 /* PBXContainerItemProxy */ = {
+		0213479445FEE735C27B8C92D5E35D9E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 130BE7DF50C525BAC4864B98A37731E4;
 			remoteInfo = "Pods-UltraDrawerView_Example";
 		};
-		549D743727BAC1BB6692F05729760359 /* PBXContainerItemProxy */ = {
+		49E442ABE213D8B72AA8EF1B006C69E0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -58,60 +60,62 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		021EFF1CDA30E8F478B1714D9D0CC026 /* Notifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Notifier.swift; sourceTree = "<group>"; };
+		03281061BE31E520F2B2BC1DEEAA103B /* SnappingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SnappingView.swift; sourceTree = "<group>"; };
 		0444ADD3ECE9683B6EA956771CAD5E4F /* Pods-UltraDrawerView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-UltraDrawerView_Example.modulemap"; sourceTree = "<group>"; };
+		067BB6238EDC4DBD16DF646FF636C206 /* Clamp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Clamp.swift; sourceTree = "<group>"; };
 		0D293B422A1528E315476BD6E21F7431 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		11B290BCD3382EB17CE3462B9CA8D8DB /* SnappingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SnappingView.swift; sourceTree = "<group>"; };
-		155BDBFEC0DCC59F9F5E67853C72E68A /* TimerAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TimerAnimation.swift; sourceTree = "<group>"; };
 		15F3E21076847172A71A92C7B68A25FA /* SVPrivateScrollDelegateProxy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SVPrivateScrollDelegateProxy.m; sourceTree = "<group>"; };
-		1BD079EF5BE471DDF8E569E349E6AB2D /* CGPoint+Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "CGPoint+Utils.swift"; sourceTree = "<group>"; };
-		1DF4451CE8EF2553ABC813F119E39DDD /* ScrollDrawerViewContent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ScrollDrawerViewContent.swift; sourceTree = "<group>"; };
-		2030C4860F2D69A912BF1F2B5F1F05FD /* DrawerViewContent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DrawerViewContent.swift; sourceTree = "<group>"; };
+		1DAC8EBD7DD7123859A6057CC229800A /* SpringTimingParameters.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpringTimingParameters.swift; sourceTree = "<group>"; };
+		1F5231ED9DE295FCADBC6B912CDA5994 /* DrawerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DrawerView.swift; sourceTree = "<group>"; };
 		2227798FAA9A9FA8B0906B94C3029714 /* Pods-UltraDrawerView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-UltraDrawerView_Tests-umbrella.h"; sourceTree = "<group>"; };
-		256A02135D8FBB9EC409FC17078020CA /* TimingParameters.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TimingParameters.swift; sourceTree = "<group>"; };
 		25A106361BE9411B7E81C7E7EC8256ED /* Pods-UltraDrawerView_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UltraDrawerView_Tests-Info.plist"; sourceTree = "<group>"; };
 		25B43C9B9BE14A243D5B38D8AD4B7E8D /* UltraDrawerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UltraDrawerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		25BC00C3EF7A4D6780AB5754C0E93AA2 /* UltraDrawerView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = UltraDrawerView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		2723CD347C8776A1E63EDB86D22106CB /* Pods_UltraDrawerView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UltraDrawerView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		279BFB9D09B3704459BE9636A9E49E9B /* DrawerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DrawerView.swift; sourceTree = "<group>"; };
-		2A54B27C71D60B56693828B72E7195E2 /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		2D6761282A6DC09711C30FB105B3309C /* UltraDrawerView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "UltraDrawerView-Info.plist"; sourceTree = "<group>"; };
-		37F75962F22BDE887FC6712DD64015AF /* DrawerView+UIScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "DrawerView+UIScrollView.swift"; sourceTree = "<group>"; };
-		392EDDC096D0FA8269108632FBC50298 /* WeakCollection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WeakCollection.swift; sourceTree = "<group>"; };
+		349D48E770D3862544DF0F689735AF55 /* CornerRadiusMaskView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CornerRadiusMaskView.swift; sourceTree = "<group>"; };
+		384B6F385D4F19CB20FC9D52E75CB5D5 /* TimingParameters.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TimingParameters.swift; sourceTree = "<group>"; };
 		3C9B67CFA4781E6F352A57191FE03134 /* Pods-UltraDrawerView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-UltraDrawerView_Tests-dummy.m"; sourceTree = "<group>"; };
 		4B2055B8AFDA2F68825B4F1ACC462CC3 /* UltraDrawerView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UltraDrawerView-dummy.m"; sourceTree = "<group>"; };
 		4F7717BA2009FFA6A62EA92FB6AC7D97 /* Pods-UltraDrawerView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-UltraDrawerView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		54147637E053D42B814E00D664972CF0 /* Pods-UltraDrawerView_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-UltraDrawerView_Tests.modulemap"; sourceTree = "<group>"; };
+		603AB051FD860B218BFF5A9C88191BAB /* Collection+Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Collection+Utils.swift"; sourceTree = "<group>"; };
 		6296D02C379C21BEBF21957B3662807C /* UltraDrawerView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UltraDrawerView.debug.xcconfig; sourceTree = "<group>"; };
+		63E27D6D5FD55DB55413AD631289FB11 /* RubberBand.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RubberBand.swift; sourceTree = "<group>"; };
 		6421AF76145A80D1EC3B4616207E5DA2 /* Pods-UltraDrawerView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UltraDrawerView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		6EF8E2E93F78B9CC8FAE7F8F2FE1FC85 /* Pods-UltraDrawerView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UltraDrawerView_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		7610B9FA5551EDC9391F7DCA41CF0ABE /* UltraDrawerView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UltraDrawerView.release.xcconfig; sourceTree = "<group>"; };
-		7BC8B2F971EF944C775870E8E7E79EFB /* CornerRadiusMaskView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CornerRadiusMaskView.swift; sourceTree = "<group>"; };
 		7DA30575C583D3FB2B52A72383EC5E8E /* Pods_UltraDrawerView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UltraDrawerView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82FA678E78592F1CAD8F89B0AECE1973 /* TimerAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TimerAnimation.swift; sourceTree = "<group>"; };
 		83DB17EF35C77659D4CE8FFB87916A2D /* SVPrivateScrollDelegateProxy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SVPrivateScrollDelegateProxy.h; sourceTree = "<group>"; };
+		90CFAC4A398A70CE2C5A4D2DAE60DCAA /* Notifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Notifier.swift; sourceTree = "<group>"; };
 		92FDAB4FE16D6576D66C3CA58713EAA3 /* Pods-UltraDrawerView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-UltraDrawerView_Example-dummy.m"; sourceTree = "<group>"; };
+		933FA6C798C0DCDDD749CBEAC6D5716B /* DrawerOriginChangeSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DrawerOriginChangeSource.swift; sourceTree = "<group>"; };
 		9449D402DB1A97E6FB8FE8C5BF20D30A /* Pods-UltraDrawerView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UltraDrawerView_Example.release.xcconfig"; sourceTree = "<group>"; };
+		977945CCC5A55019958F33FA569A6EC7 /* FloatingPoint+Projection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "FloatingPoint+Projection.swift"; sourceTree = "<group>"; };
 		9C6EFF494A5BBF76D935754BC98A5FCC /* Pods-UltraDrawerView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UltraDrawerView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		9CEDE5AF5CC592B7868713CDF0436D5C /* Collection+Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Collection+Utils.swift"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DED27627665D45AE4CF2BB8804708A6 /* Pods-UltraDrawerView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-UltraDrawerView_Example-frameworks.sh"; sourceTree = "<group>"; };
+		A3D76D2D257C8E52117BAA1D509AEE58 /* CGPoint+Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "CGPoint+Utils.swift"; sourceTree = "<group>"; };
 		A4CED8BD90135E8474AE3781A0987D87 /* Pods-UltraDrawerView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UltraDrawerView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		A8EF9C170DA35E3524AB3464303260D2 /* DrawerViewContent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DrawerViewContent.swift; sourceTree = "<group>"; };
 		A962F2CB47B6B722E64A2ED5209BABF3 /* Pods-UltraDrawerView_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UltraDrawerView_Example-Info.plist"; sourceTree = "<group>"; };
-		AD2FB494847772BD0A6E4B8F535DB97B /* UIImage+Rounded.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+Rounded.swift"; sourceTree = "<group>"; };
-		AFB5F3C10F2F69E5B0A649ABF5E5999D /* Clamp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Clamp.swift; sourceTree = "<group>"; };
-		BC5F9CEC271B498FA6F8659A0CA5FBC8 /* DrawerOriginChangeSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DrawerOriginChangeSource.swift; sourceTree = "<group>"; };
+		B1F470F125B4BCC400C805DA /* SnappingViewSpringAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnappingViewSpringAnimation.swift; sourceTree = "<group>"; };
+		C14288D0971C75DA32D1378F2B919810 /* UIImage+Rounded.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+Rounded.swift"; sourceTree = "<group>"; };
 		C3CBF0C9549BE7B9D5B570903DCA0835 /* Pods-UltraDrawerView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UltraDrawerView_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		C4AA8104C69270D8554F2C27B1361272 /* FloatingPoint+Projection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "FloatingPoint+Projection.swift"; sourceTree = "<group>"; };
 		CC0D8D379CEE73F6B820F92D919D369C /* UltraDrawerView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = UltraDrawerView.modulemap; sourceTree = "<group>"; };
 		D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		D51C1C69F7FF269DC2B67DBD92AA8949 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		D7B0CC4966000F113FE1E2378533E7D9 /* SpringTimingParameters.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpringTimingParameters.swift; sourceTree = "<group>"; };
+		DA6D91A5568FABD0CA2A20BD36B5083A /* FloatingPoint+Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "FloatingPoint+Utils.swift"; sourceTree = "<group>"; };
+		DF91FB07DFF88A415E70B7CF0CC60025 /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		ED338207DFF7C1903D474F21C3AEEFB1 /* UltraDrawerView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UltraDrawerView-umbrella.h"; sourceTree = "<group>"; };
+		EF2ED400244ED6BE52A6B26A05DE69E6 /* DrawerView+UIScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "DrawerView+UIScrollView.swift"; sourceTree = "<group>"; };
+		F0816A598DE5DE09294941A71FD068B6 /* ScrollDrawerViewContent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ScrollDrawerViewContent.swift; sourceTree = "<group>"; };
 		F09AD31ED181E2D81AA8BFE0AA0D20AE /* Pods-UltraDrawerView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-UltraDrawerView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		F1FDE4F5DE2F1E60D912F197B1883FFA /* RubberBand.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RubberBand.swift; sourceTree = "<group>"; };
 		F79AB947CCB9D42BF27F531E83ECD4D2 /* UltraDrawerView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UltraDrawerView-prefix.pch"; sourceTree = "<group>"; };
 		FBB08C85D6742EA828C7961CF2BF4578 /* Pods-UltraDrawerView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-UltraDrawerView_Example-umbrella.h"; sourceTree = "<group>"; };
+		FF5E6A715CDF836CABFF9027DF792049 /* WeakCollection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WeakCollection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,20 +127,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B1C2F8C995FDE244145ECF1E2CD2BDB8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BF1F2E2431CBBAE7400266D7113E985E /* Foundation.framework in Frameworks */,
-				BA0DC2C596209BB301F02164DE8AB4FE /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DE761D715633AA24F7C12BFBEEBAB729 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				AEAD98C73A49C4BAFD2CB0659A300D59 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9BFCA1383FCF57AD32449FC330E610B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C1116C4E1DE93495DB01E29855DB9A1 /* Foundation.framework in Frameworks */,
+				AD62757B7FED7EAB4E24FA7F6F76EEFB /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +161,22 @@
 				59DA5C1F72E1D5BABC43EACBA672C3BA /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		16DD416439EC5372BB57B8B1FB535241 /* UltraDrawerView */ = {
+			isa = PBXGroup;
+			children = (
+				933FA6C798C0DCDDD749CBEAC6D5716B /* DrawerOriginChangeSource.swift */,
+				1F5231ED9DE295FCADBC6B912CDA5994 /* DrawerView.swift */,
+				EF2ED400244ED6BE52A6B26A05DE69E6 /* DrawerView+UIScrollView.swift */,
+				A8EF9C170DA35E3524AB3464303260D2 /* DrawerViewContent.swift */,
+				F0816A598DE5DE09294941A71FD068B6 /* ScrollDrawerViewContent.swift */,
+				03281061BE31E520F2B2BC1DEEAA103B /* SnappingView.swift */,
+				B1F470F125B4BCC400C805DA /* SnappingViewSpringAnimation.swift */,
+				7C498BF97493E4E126F6CDB786D45077 /* Utils */,
+			);
+			name = UltraDrawerView;
+			path = Sources/UltraDrawerView;
 			sourceTree = "<group>";
 		};
 		2E5D3D6CC1BA412A2DDF40BA1C2C29CD /* Products */ = {
@@ -188,37 +208,23 @@
 			name = Pod;
 			sourceTree = "<group>";
 		};
-		785F5AA64533A5C51063F6218E78B0F2 /* UltraDrawerView */ = {
+		7C498BF97493E4E126F6CDB786D45077 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				BC5F9CEC271B498FA6F8659A0CA5FBC8 /* DrawerOriginChangeSource.swift */,
-				279BFB9D09B3704459BE9636A9E49E9B /* DrawerView.swift */,
-				37F75962F22BDE887FC6712DD64015AF /* DrawerView+UIScrollView.swift */,
-				2030C4860F2D69A912BF1F2B5F1F05FD /* DrawerViewContent.swift */,
-				1DF4451CE8EF2553ABC813F119E39DDD /* ScrollDrawerViewContent.swift */,
-				11B290BCD3382EB17CE3462B9CA8D8DB /* SnappingView.swift */,
-				89C93A0B645FE4E35C5971D1C002B73E /* Utils */,
-			);
-			name = UltraDrawerView;
-			path = Sources/UltraDrawerView;
-			sourceTree = "<group>";
-		};
-		89C93A0B645FE4E35C5971D1C002B73E /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				1BD079EF5BE471DDF8E569E349E6AB2D /* CGPoint+Utils.swift */,
-				AFB5F3C10F2F69E5B0A649ABF5E5999D /* Clamp.swift */,
-				9CEDE5AF5CC592B7868713CDF0436D5C /* Collection+Utils.swift */,
-				7BC8B2F971EF944C775870E8E7E79EFB /* CornerRadiusMaskView.swift */,
-				C4AA8104C69270D8554F2C27B1361272 /* FloatingPoint+Projection.swift */,
-				021EFF1CDA30E8F478B1714D9D0CC026 /* Notifier.swift */,
-				F1FDE4F5DE2F1E60D912F197B1883FFA /* RubberBand.swift */,
-				D7B0CC4966000F113FE1E2378533E7D9 /* SpringTimingParameters.swift */,
-				155BDBFEC0DCC59F9F5E67853C72E68A /* TimerAnimation.swift */,
-				256A02135D8FBB9EC409FC17078020CA /* TimingParameters.swift */,
-				AD2FB494847772BD0A6E4B8F535DB97B /* UIImage+Rounded.swift */,
-				2A54B27C71D60B56693828B72E7195E2 /* UIView+AutoLayout.swift */,
-				392EDDC096D0FA8269108632FBC50298 /* WeakCollection.swift */,
+				A3D76D2D257C8E52117BAA1D509AEE58 /* CGPoint+Utils.swift */,
+				067BB6238EDC4DBD16DF646FF636C206 /* Clamp.swift */,
+				603AB051FD860B218BFF5A9C88191BAB /* Collection+Utils.swift */,
+				349D48E770D3862544DF0F689735AF55 /* CornerRadiusMaskView.swift */,
+				977945CCC5A55019958F33FA569A6EC7 /* FloatingPoint+Projection.swift */,
+				DA6D91A5568FABD0CA2A20BD36B5083A /* FloatingPoint+Utils.swift */,
+				90CFAC4A398A70CE2C5A4D2DAE60DCAA /* Notifier.swift */,
+				63E27D6D5FD55DB55413AD631289FB11 /* RubberBand.swift */,
+				1DAC8EBD7DD7123859A6057CC229800A /* SpringTimingParameters.swift */,
+				82FA678E78592F1CAD8F89B0AECE1973 /* TimerAnimation.swift */,
+				384B6F385D4F19CB20FC9D52E75CB5D5 /* TimingParameters.swift */,
+				C14288D0971C75DA32D1378F2B919810 /* UIImage+Rounded.swift */,
+				DF91FB07DFF88A415E70B7CF0CC60025 /* UIView+AutoLayout.swift */,
+				FF5E6A715CDF836CABFF9027DF792049 /* WeakCollection.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -314,7 +320,7 @@
 			children = (
 				7688A98020F72105C79A6ACA20E6DB40 /* Pod */,
 				AFE7767F34E8FE89993EE53760C16651 /* Support Files */,
-				785F5AA64533A5C51063F6218E78B0F2 /* UltraDrawerView */,
+				16DD416439EC5372BB57B8B1FB535241 /* UltraDrawerView */,
 				F154A09CDC47721FDEB4DCE907758766 /* UltraDrawerViewObjCUtils */,
 			);
 			name = UltraDrawerView;
@@ -332,12 +338,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1A6BB79FBA508D45B61AD0BF0F9D2F8B /* Headers */ = {
+		3DC50449BDF85BED00F86E1C803B2BF8 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00B638CC150D4F904DA7E0428B140417 /* SVPrivateScrollDelegateProxy.h in Headers */,
-				60B910DB8662BE6887941572ACC57488 /* UltraDrawerView-umbrella.h in Headers */,
+				F8E61FDE33A675430F2A201BEFBCAF22 /* SVPrivateScrollDelegateProxy.h in Headers */,
+				E2909F5C4B221AD8451FC49AC61C5434 /* UltraDrawerView-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,7 +370,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				CF0836A2BC041C7A96FF0D566DB60CDC /* PBXTargetDependency */,
+				BA06C872B38C452C59FDD81EF50FF838 /* PBXTargetDependency */,
 			);
 			name = "Pods-UltraDrawerView_Example";
 			productName = "Pods-UltraDrawerView_Example";
@@ -373,12 +379,12 @@
 		};
 		72375887F516E1E7273A4297979DA54F /* UltraDrawerView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 74030A04352E397571849A7DB1E71B4A /* Build configuration list for PBXNativeTarget "UltraDrawerView" */;
+			buildConfigurationList = 2BC01F69AF5306FDB246C7BA0F3DA679 /* Build configuration list for PBXNativeTarget "UltraDrawerView" */;
 			buildPhases = (
-				1A6BB79FBA508D45B61AD0BF0F9D2F8B /* Headers */,
-				F59A2678A41CF4401BB8AC03FFCD6D0F /* Sources */,
-				B1C2F8C995FDE244145ECF1E2CD2BDB8 /* Frameworks */,
-				C51486FAD09E2EB2177F042FD585CE75 /* Resources */,
+				3DC50449BDF85BED00F86E1C803B2BF8 /* Headers */,
+				F5E7C075FAF85E9C8D9DA8819559531F /* Sources */,
+				E9BFCA1383FCF57AD32449FC330E610B /* Frameworks */,
+				F2ED6F6222C4D2E098875A0B2A23F348 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -401,7 +407,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				37C542A9D80EEE7291E7DCFCC70C608E /* PBXTargetDependency */,
+				BA5BBA5379C5A73693ED7FBF5F3300C3 /* PBXTargetDependency */,
 			);
 			name = "Pods-UltraDrawerView_Tests";
 			productName = "Pods-UltraDrawerView_Tests";
@@ -445,14 +451,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C51486FAD09E2EB2177F042FD585CE75 /* Resources */ = {
+		DD59EF84547B7838CD48588BA73EE81C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DD59EF84547B7838CD48588BA73EE81C /* Resources */ = {
+		F2ED6F6222C4D2E098875A0B2A23F348 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -478,83 +484,54 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F59A2678A41CF4401BB8AC03FFCD6D0F /* Sources */ = {
+		F5E7C075FAF85E9C8D9DA8819559531F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACC89C6E886C6FD37C009799667A5639 /* CGPoint+Utils.swift in Sources */,
-				85793ABFF7A5B70D9C6C4C3D6E9B73C1 /* Clamp.swift in Sources */,
-				522D02F3E9D8517CECBCE6CCE7AFD6EE /* Collection+Utils.swift in Sources */,
-				AE219120524779D55E9DFA3138ECEA52 /* CornerRadiusMaskView.swift in Sources */,
-				3FFCF025324ABF184534B0B0C36CDAF5 /* DrawerOriginChangeSource.swift in Sources */,
-				5D210C23D68B9D25C3CA147B17D7EC76 /* DrawerView+UIScrollView.swift in Sources */,
-				FFB5CD8867B26E7253694989E1E784BE /* DrawerView.swift in Sources */,
-				0B350CE2F7FDB49C68F4CED518AFF99A /* DrawerViewContent.swift in Sources */,
-				06B56DD6B3FF2EC986D0CC623A2600D2 /* FloatingPoint+Projection.swift in Sources */,
-				2B1F212D1DAF9EC93FEDC21AFAC63F06 /* Notifier.swift in Sources */,
-				0671F2091881D668C55529FEF92E0F96 /* RubberBand.swift in Sources */,
-				5602686FC3CEED3C6DE04A946A4F9CE9 /* ScrollDrawerViewContent.swift in Sources */,
-				7AE3DFADE8C9B8B3E4DBEA00156C8786 /* SnappingView.swift in Sources */,
-				70DFFADFE65C838CE91EDF6813755968 /* SpringTimingParameters.swift in Sources */,
-				20F67A55A8A84687C161EAA8DC50DF9B /* SVPrivateScrollDelegateProxy.m in Sources */,
-				21F944E69E476BBD677C512EEE5EB726 /* TimerAnimation.swift in Sources */,
-				643CFD4272B49386004260E3A92A6ABC /* TimingParameters.swift in Sources */,
-				8702ACAD7A49F3E9DF59354A91CA4B8D /* UIImage+Rounded.swift in Sources */,
-				DC06C7F94F1457E9CC36E3745EB7FC44 /* UIView+AutoLayout.swift in Sources */,
-				8B03FDBCA45DD8739BAD9D9BB2712A01 /* UltraDrawerView-dummy.m in Sources */,
-				B88548C00999B08DF18F27E2A251B7EA /* WeakCollection.swift in Sources */,
+				CB0369922B36EFE1D48BC3C78EAED306 /* CGPoint+Utils.swift in Sources */,
+				A1E53EBF44551F79A31160AB15F8D301 /* Clamp.swift in Sources */,
+				0F79455BD7B4238DBE93FC182804F00B /* Collection+Utils.swift in Sources */,
+				A7737C462F9606474D1D5D0E8B45B4E9 /* CornerRadiusMaskView.swift in Sources */,
+				A55EB6DA7BDB70C176D642263F1F6680 /* DrawerOriginChangeSource.swift in Sources */,
+				2B2EDCF7ABC60C38A6756757168237E2 /* DrawerView+UIScrollView.swift in Sources */,
+				495FC7F0C03EFC06B98AF64EE5D25359 /* DrawerView.swift in Sources */,
+				B691EED7695A77E572733B2E2131F0E9 /* DrawerViewContent.swift in Sources */,
+				69055F1C26EFFEF76D6CED3F434E0D36 /* FloatingPoint+Projection.swift in Sources */,
+				9FA25BB73B31BE95F22FD85070869756 /* FloatingPoint+Utils.swift in Sources */,
+				61463D4E9B19D777B48038B49CD58259 /* Notifier.swift in Sources */,
+				53F3A773202C5175C42A21DAEA766EA8 /* RubberBand.swift in Sources */,
+				8FA438A6AC29206766B7BD3798317CEB /* ScrollDrawerViewContent.swift in Sources */,
+				F0E2758BA2B7F50F7AE97F4B7A6B0C65 /* SnappingView.swift in Sources */,
+				6C78777D84BD99F569EDC47AD0CCC3C8 /* SpringTimingParameters.swift in Sources */,
+				06E6D984B5DC5CCE232EC8C1EFABB165 /* SVPrivateScrollDelegateProxy.m in Sources */,
+				AC65AED16C7FF0C1E1A91A62D2897ED1 /* TimerAnimation.swift in Sources */,
+				07B1423C261228F1AA36EE91F549F512 /* TimingParameters.swift in Sources */,
+				AA1F63D66961CD53CCEA0C8CA0260D1C /* UIImage+Rounded.swift in Sources */,
+				B1F470F225B4BCC400C805DA /* SnappingViewSpringAnimation.swift in Sources */,
+				E1FA8A3190539C3BC66DBE16182DEA56 /* UIView+AutoLayout.swift in Sources */,
+				8BDF7A8A030B1E591072A83AC6656875 /* UltraDrawerView-dummy.m in Sources */,
+				9E429D13379BC21F1C39AB2C99C43C09 /* WeakCollection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		37C542A9D80EEE7291E7DCFCC70C608E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-UltraDrawerView_Example";
-			target = 130BE7DF50C525BAC4864B98A37731E4 /* Pods-UltraDrawerView_Example */;
-			targetProxy = 277DC6CC64171369B997E42C3E506F11 /* PBXContainerItemProxy */;
-		};
-		CF0836A2BC041C7A96FF0D566DB60CDC /* PBXTargetDependency */ = {
+		BA06C872B38C452C59FDD81EF50FF838 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = UltraDrawerView;
 			target = 72375887F516E1E7273A4297979DA54F /* UltraDrawerView */;
-			targetProxy = 549D743727BAC1BB6692F05729760359 /* PBXContainerItemProxy */;
+			targetProxy = 49E442ABE213D8B72AA8EF1B006C69E0 /* PBXContainerItemProxy */;
+		};
+		BA5BBA5379C5A73693ED7FBF5F3300C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-UltraDrawerView_Example";
+			target = 130BE7DF50C525BAC4864B98A37731E4 /* Pods-UltraDrawerView_Example */;
+			targetProxy = 0213479445FEE735C27B8C92D5E35D9E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1D9CAF11A0DE997DFE95389EF6B9C48D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7610B9FA5551EDC9391F7DCA41CF0ABE /* UltraDrawerView.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/UltraDrawerView/UltraDrawerView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/UltraDrawerView/UltraDrawerView-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/UltraDrawerView/UltraDrawerView.modulemap";
-				PRODUCT_MODULE_NAME = UltraDrawerView;
-				PRODUCT_NAME = UltraDrawerView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -621,7 +598,7 @@
 			};
 			name = Debug;
 		};
-		294624AAD71F16E2A1BB483C45BA3D0D /* Debug */ = {
+		2A29AF5FBB9637EBE98BD6A89AD2746E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6296D02C379C21BEBF21957B3662807C /* UltraDrawerView.debug.xcconfig */;
 			buildSettings = {
@@ -650,6 +627,37 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		3A93CE1E2C6EFC15E62E28308FFDCEA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7610B9FA5551EDC9391F7DCA41CF0ABE /* UltraDrawerView.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/UltraDrawerView/UltraDrawerView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/UltraDrawerView/UltraDrawerView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/UltraDrawerView/UltraDrawerView.modulemap";
+				PRODUCT_MODULE_NAME = UltraDrawerView;
+				PRODUCT_NAME = UltraDrawerView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		80840E7686828D6B2373F5E971C4B8B9 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -845,20 +853,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2BC01F69AF5306FDB246C7BA0F3DA679 /* Build configuration list for PBXNativeTarget "UltraDrawerView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A29AF5FBB9637EBE98BD6A89AD2746E /* Debug */,
+				3A93CE1E2C6EFC15E62E28308FFDCEA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */,
 				CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		74030A04352E397571849A7DB1E71B4A /* Build configuration list for PBXNativeTarget "UltraDrawerView" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				294624AAD71F16E2A1BB483C45BA3D0D /* Debug */,
-				1D9CAF11A0DE997DFE95389EF6B9C48D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

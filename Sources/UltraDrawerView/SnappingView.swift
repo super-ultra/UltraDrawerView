@@ -86,6 +86,10 @@ open class SnappingView: UIView {
     
     // MARK: - Private
     
+    private enum Static {
+        static let originEps: CGFloat = 1 / UIScreen.main.scale
+    }
+    
     private let notifier = Notifier<SnappingViewListener>()
     
     private var containerOriginConstraint: NSLayoutConstraint?
@@ -215,22 +219,18 @@ open class SnappingView: UIView {
     private func clampTargetHeaderOrigin(_ target: CGFloat) -> CGFloat {
         guard let limits = anchorLimits else { return target }
         
+        if !bounces {
+            return target.clamped(to: limits)
+        }
+        
         if target < limits.lowerBound {
-            if bounces {
-                let diff = limits.lowerBound - target
-                let dim = abs(limits.lowerBound)
-                return limits.lowerBound - rubberBandClamp(diff, dim: dim)
-            } else {
-                return limits.lowerBound
-            }
+            let diff = limits.lowerBound - target
+            let dim = abs(limits.lowerBound)
+            return limits.lowerBound - rubberBandClamp(diff, dim: dim)
         } else if target > limits.upperBound {
-            if bounces {
-                let diff = target - limits.upperBound
-                let dim = abs(bounds.height - limits.upperBound)
-                return limits.upperBound + rubberBandClamp(diff, dim: dim)
-            } else {
-                return limits.upperBound
-            }
+            let diff = target - limits.upperBound
+            let dim = abs(bounds.height - limits.upperBound)
+            return limits.upperBound + rubberBandClamp(diff, dim: dim)
         } else {
             return target
         }
@@ -238,7 +238,7 @@ open class SnappingView: UIView {
     
     // MARK: - Private: Anchors
     
-    private var originAnimation: SnappingViewAnimationImpl?
+    private var originAnimation: SnappingViewSpringAnimation?
     
     private func selectNextAnchor(to anchor: CGFloat, velocity: CGFloat) -> CGFloat {
         if velocity == 0 || anchors.isEmpty {
@@ -273,7 +273,9 @@ open class SnappingView: UIView {
             targetAnchor = projectionAnchor
         }
         
-        moveOrigin(to: targetAnchor, source: source, animated: true, velocity: velocity)
+        if !origin.isEqual(to: targetAnchor, eps: Static.originEps) {
+            moveOrigin(to: targetAnchor, source: source, animated: true, velocity: velocity)
+        }
     }
     
     private func moveOrigin(to newOriginY: CGFloat, source: DrawerOriginChangeSource, animated: Bool,
@@ -286,7 +288,7 @@ open class SnappingView: UIView {
             return
         }
         
-        let originAnimation = SnappingViewAnimationImpl(
+        let originAnimation = SnappingViewSpringAnimation(
             initialOrigin: origin,
             targetOrigin: newOriginY,
             initialVelocity: velocity ?? 0,
@@ -329,8 +331,12 @@ extension SnappingView: DrawerViewContentListener {
         
         let diff = lastContentOffset.y - drawerViewContent.contentOffset.y
     
-        if (diff < 0 && origin > limits.lowerBound)
-            || (diff > 0 && drawerViewContent.contentOffset.y < -drawerViewContent.contentInset.top)
+        if (diff < 0
+                && drawerViewContent.contentOffset.y > -drawerViewContent.contentInset.top
+                && origin.isGreater(than: limits.lowerBound, eps: Static.originEps))
+            || (diff > 0
+                    && drawerViewContent.contentOffset.y < -drawerViewContent.contentInset.top
+                    && origin.isLess(than: limits.upperBound, eps: Static.originEps))
         {
             // Drop contentOffset changing
             drawerViewContent.removeListener(self)
@@ -341,13 +347,7 @@ extension SnappingView: DrawerViewContentListener {
             }
             drawerViewContent.addListener(self)
             
-            let newOrigin: CGFloat
-            
-            if diff > 0 && bounces {
-                newOrigin = origin + diff
-            } else {
-                newOrigin = (origin + diff).clamped(to: limits)
-            }
+            let newOrigin = (origin + diff).clamped(to: limits)
             
             setOrigin(newOrigin, source: .contentInteraction)
         }
@@ -365,7 +365,7 @@ extension SnappingView: DrawerViewContentListener {
     {
         contentState = .normal
     
-        guard let limits = anchorLimits, origin > limits.lowerBound else { return }
+        guard let limits = anchorLimits, limits.contains(origin, eps: Static.originEps) else { return }
         
         // Stop scrolling
         targetContentOffset.pointee = drawerViewContent.contentOffset
@@ -375,69 +375,11 @@ extension SnappingView: DrawerViewContentListener {
     
 }
 
-private class SnappingViewAnimationImpl: SnappingViewAnimation {
+
+private extension ClosedRange where Bound: FloatingPoint {
     
-    init(initialOrigin: CGFloat,
-         targetOrigin: CGFloat,
-         initialVelocity: CGFloat,
-         onUpdate: @escaping (CGFloat) -> Void,
-         completion: @escaping (Bool) -> Void)
-    {
-        self.currentOrigin = initialOrigin
-        self.currentVelocity = initialVelocity
-        self.targetOrigin = targetOrigin
-        self.onUpdate = onUpdate
-        self.completion = completion
-        
-        updateAnimation()
+    func contains(_ element: Bound, eps: Bound) -> Bool {
+        return element.isGreater(than: lowerBound, eps: eps) && element.isLess(than: upperBound, eps: eps)
     }
     
-    func invalidate() {
-        animation?.invalidate()
-    }
-    
-    // MARK: - SnappingViewAnimation
-    
-    var targetOrigin: CGFloat {
-        didSet {
-            updateAnimation()
-        }
-    }
-    
-    var isDone: Bool {
-        return animation?.running ?? false
-    }
-    
-    // MARK: - Private
-    
-    private var currentOrigin: CGFloat
-    private var currentVelocity: CGFloat
-    private let onUpdate: (CGFloat) -> Void
-    private let completion: (Bool) -> Void
-    private var animation: TimerAnimation?
-    
-    private func updateAnimation() {
-        guard !isDone else { return }
-        
-        animation?.invalidate(withColmpletion: false)
-        
-        let from = currentOrigin
-        let to = targetOrigin
-    
-        let parameters = SpringTimingParameters(spring: .default,
-                                                displacement: from - to,
-                                                initialVelocity: currentVelocity,
-                                                threshold: 1 / UIScreen.main.scale)
-        
-        let duration = parameters.duration
-    
-        animation = TimerAnimation(
-            duration: duration,
-            animations: { [weak self] _, time in
-                guard let self = self else { return }
-                self.currentOrigin = to + parameters.value(at: time)
-                self.onUpdate(self.currentOrigin)
-            },
-            completion: completion)
-    }
 }
