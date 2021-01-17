@@ -373,7 +373,10 @@ extension SnappingView: DrawerViewContentListener {
     ) {
         contentState = .normal
     
-        guard let limits = anchorLimits, limits.contains(origin, eps: Static.originEps) else { return }
+        guard let limits = anchorLimits, limits.contains(origin, eps: Static.originEps) else {
+            notifyDidEndUpdatingOrigin(with: .contentInteraction)
+            return
+        }
         
         // Stop scrolling
         targetContentOffset.pointee = drawerViewContent.contentOffset

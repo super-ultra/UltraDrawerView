@@ -398,7 +398,7 @@ open class DrawerView: UIView {
     }
     
     private func state(forOrigin origin: CGFloat) -> State? {
-        let eps: CGFloat = 1e-2
+        let eps: CGFloat = 1 / UIScreen.main.scale
         let anchors = availableAnchors.sorted { $0.anchor < $1.anchor }
         return anchors.first(where: { $0.anchor.distance(to: origin) < eps })?.state
     }
