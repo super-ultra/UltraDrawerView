@@ -7,7 +7,7 @@ internal extension CGPoint {
     }
      
     func clamped(to rect: CGRect) -> CGPoint {
-        return CGPoint(x: x.clamped(to: rect.minX...rect.maxX), y: y.clamped(to: rect.minY...rect.maxY))
+        return CGPoint(x: x.clamped(to: rect.minX ... rect.maxX), y: y.clamped(to: rect.minY ... rect.maxY))
     }
     
     func distance(to other: CGPoint) -> CGFloat {
@@ -51,27 +51,27 @@ internal extension CGPoint {
 
 internal extension CGPoint {
     
-    static prefix func -(lhs: CGPoint) -> CGPoint {
+    static prefix func - (lhs: CGPoint) -> CGPoint {
         return CGPoint(x: -lhs.x, y: -lhs.y)
     }
     
-    static func +(lhs: CGPoint, rhs: CGPoint) -> CGPoint {
+    static func + (lhs: CGPoint, rhs: CGPoint) -> CGPoint {
         return CGPoint(x: lhs.x + rhs.x, y: lhs.y + rhs.y)
     }
     
-    static func -(lhs: CGPoint, rhs: CGPoint) -> CGPoint {
+    static func - (lhs: CGPoint, rhs: CGPoint) -> CGPoint {
         return CGPoint(x: lhs.x - rhs.x, y: lhs.y - rhs.y)
     }
     
-    static func *(lhs: CGFloat, rhs: CGPoint) -> CGPoint {
+    static func * (lhs: CGFloat, rhs: CGPoint) -> CGPoint {
         return CGPoint(x: lhs * rhs.x, y: lhs * rhs.y)
     }
     
-    static func *(lhs: CGPoint, rhs: CGFloat) -> CGPoint {
+    static func * (lhs: CGPoint, rhs: CGFloat) -> CGPoint {
         return rhs * lhs
     }
     
-    static func /(lhs: CGPoint, rhs: CGFloat) -> CGPoint {
+    static func / (lhs: CGPoint, rhs: CGFloat) -> CGPoint {
         return CGPoint(x: lhs.x / rhs, y: lhs.y / rhs)
     }
     

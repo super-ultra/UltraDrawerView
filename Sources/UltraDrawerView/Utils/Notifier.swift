@@ -3,7 +3,7 @@ import Foundation
 internal final class Notifier<Listener> {
 
     init() {
-        listeners = WeakCollection<Listener>()
+        self.listeners = WeakCollection<Listener>()
     }
     
     func subscribe(_ listener: Listener) {

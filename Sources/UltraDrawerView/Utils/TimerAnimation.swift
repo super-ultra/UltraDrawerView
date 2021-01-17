@@ -12,7 +12,7 @@ internal final class TimerAnimation {
         self.animations = animations
         self.completion = completion
 
-        firstFrameTimestamp = CACurrentMediaTime()
+        self.firstFrameTimestamp = CACurrentMediaTime()
         
         let displayLink = CADisplayLink(target: self, selector: #selector(handleFrame(_:)))
         displayLink.add(to: .main, forMode: RunLoop.Mode.common)

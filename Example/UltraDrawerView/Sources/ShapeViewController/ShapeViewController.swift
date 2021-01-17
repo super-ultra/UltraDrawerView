@@ -3,7 +3,7 @@ import UltraDrawerView
 
 final class ShapeViewController: UIViewController {
 
-    private struct Layout {
+    private enum Layout {
         static let topInsetPortrait: CGFloat = 36
         static let topInsetLandscape: CGFloat = 20
         static let middleInsetFromBottom: CGFloat = 280
@@ -92,7 +92,7 @@ final class ShapeViewController: UIViewController {
             drawerView.topAnchor.constraint(equalTo: view.topAnchor),
             drawerView.leftAnchor.constraint(equalTo: view.leftAnchor),
             drawerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            drawerView.rightAnchor.constraint(equalTo: view.rightAnchor)
+            drawerView.rightAnchor.constraint(equalTo: view.rightAnchor),
         ]
         
         let landscapeLeftAnchor: NSLayoutXAxisAnchor
@@ -106,7 +106,7 @@ final class ShapeViewController: UIViewController {
             drawerView.topAnchor.constraint(equalTo: view.topAnchor),
             drawerView.leftAnchor.constraint(equalTo: landscapeLeftAnchor, constant: 16),
             drawerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            drawerView.widthAnchor.constraint(equalToConstant: 320)
+            drawerView.widthAnchor.constraint(equalToConstant: 320),
         ]
     }
     

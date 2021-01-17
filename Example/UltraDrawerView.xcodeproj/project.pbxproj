@@ -211,6 +211,7 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				5DA3B1C81C541DF019C96CAB /* [CP] Embed Pods Frameworks */,
+				B1F4710225B4C94F00C805DA /* Check Formatting using SwiftFormat */,
 			);
 			buildRules = (
 			);
@@ -342,6 +343,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UltraDrawerView_Example/Pods-UltraDrawerView_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		B1F4710225B4C94F00C805DA /* Check Formatting using SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Check Formatting using SwiftFormat";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftformat >/dev/null; then\n    swiftformat --lint --lenient ${PROJECT_DIR} --config ${PROJECT_DIR}/../.swiftformat\n    swiftformat --lint --lenient ${PROJECT_DIR}/../Sources --config ${PROJECT_DIR}/../.swiftformat\nelse\n    echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
 		};
 		C869938265803186049FD796 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

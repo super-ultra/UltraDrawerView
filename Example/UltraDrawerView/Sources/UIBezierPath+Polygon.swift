@@ -10,7 +10,7 @@ extension UIBezierPath {
         if points.count > 1 {
             move(to: points.first!)
             
-            for i in 1..<points.count {
+            for i in 1 ..< points.count {
                 addLine(to: points[i])
             }
             
@@ -31,7 +31,7 @@ extension UIBezierPath {
         let r = radius
         let o = toRadians(offset)
         
-        return (0..<sides).map { i in
+        return (0 ..< sides).map { i in
             let xpo = cx + r * sin(angle * CGFloat(i) - o)
             let ypo = cy - r * cos(angle * CGFloat(i) - o)
             return CGPoint(x: xpo, y: ypo)

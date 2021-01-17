@@ -31,7 +31,8 @@ final class ShapeHeaderView: UIView {
         separator.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         separator.heightAnchor.constraint(equalToConstant: 1 / UIScreen.main.scale).isActive = true
     }
-    
+
+    @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

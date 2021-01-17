@@ -3,7 +3,7 @@ import Foundation
 internal struct WeakCollection<T> {
 
     init() {
-        elems = []
+        self.elems = []
     }
 
     func forEach(_ block: (T) -> Void) {

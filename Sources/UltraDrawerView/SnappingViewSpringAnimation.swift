@@ -3,12 +3,13 @@ import CoreGraphics
 
 internal final class SnappingViewSpringAnimation: SnappingViewAnimation {
     
-    init(initialOrigin: CGFloat,
-         targetOrigin: CGFloat,
-         initialVelocity: CGFloat,
-         onUpdate: @escaping (CGFloat) -> Void,
-         completion: @escaping (Bool) -> Void)
-    {
+    init(
+        initialOrigin: CGFloat,
+        targetOrigin: CGFloat,
+        initialVelocity: CGFloat,
+        onUpdate: @escaping (CGFloat) -> Void,
+        completion: @escaping (Bool) -> Void
+    ) {
         self.currentOrigin = initialOrigin
         self.currentVelocity = initialVelocity
         self.targetOrigin = targetOrigin
@@ -50,10 +51,12 @@ internal final class SnappingViewSpringAnimation: SnappingViewAnimation {
         let from = currentOrigin
         let to = targetOrigin
     
-        let parameters = SpringTimingParameters(spring: .default,
-                                                displacement: from - to,
-                                                initialVelocity: currentVelocity,
-                                                threshold: 1 / UIScreen.main.scale)
+        let parameters = SpringTimingParameters(
+            spring: .default,
+            displacement: from - to,
+            initialVelocity: currentVelocity,
+            threshold: 1 / UIScreen.main.scale
+        )
         
         let duration = parameters.duration
     
@@ -64,6 +67,7 @@ internal final class SnappingViewSpringAnimation: SnappingViewAnimation {
                 self.currentOrigin = to + parameters.value(at: time)
                 self.onUpdate(self.currentOrigin)
             },
-            completion: completion)
+            completion: completion
+        )
     }
 }

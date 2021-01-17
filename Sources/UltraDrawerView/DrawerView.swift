@@ -1,6 +1,6 @@
 import UIKit
 
-public protocol DrawerViewListener: class {
+public protocol DrawerViewListener: AnyObject {
     func drawerView(_ drawerView: DrawerView, willBeginUpdatingOrigin origin: CGFloat, source: DrawerOriginChangeSource)
     func drawerView(_ drawerView: DrawerView, didUpdateOrigin origin: CGFloat, source: DrawerOriginChangeSource)
     func drawerView(_ drawerView: DrawerView, didEndUpdatingOrigin origin: CGFloat, source: DrawerOriginChangeSource)
@@ -43,9 +43,13 @@ open class DrawerView: UIView {
         /// Indicates whether or not the drawer positions should be constrained by the content size.
         public var ignoresContentSize: Bool
         
-        public init(offset: CGFloat, edge: Edge, point: Point = .drawerOrigin, ignoresSafeArea: Bool = false,
-            ignoresContentSize: Bool = true)
-        {
+        public init(
+            offset: CGFloat,
+            edge: Edge,
+            point: Point = .drawerOrigin,
+            ignoresSafeArea: Bool = false,
+            ignoresContentSize: Bool = true
+        ) {
             self.offset = offset
             self.edge = edge
             self.point = point
@@ -53,18 +57,34 @@ open class DrawerView: UIView {
             self.ignoresContentSize = ignoresContentSize
         }
         
-        public static func fromTop(_ offset: CGFloat, relativeTo point: Point = .drawerOrigin,
-            ignoresSafeArea: Bool = false, ignoresContentSize: Bool = true) -> RelativePosition
-        {
-            return RelativePosition(offset: offset, edge: .top, point: point, ignoresSafeArea: ignoresSafeArea,
-                ignoresContentSize: ignoresContentSize)
+        public static func fromTop(
+            _ offset: CGFloat,
+            relativeTo point: Point = .drawerOrigin,
+            ignoresSafeArea: Bool = false,
+            ignoresContentSize: Bool = true
+        ) -> RelativePosition {
+            return RelativePosition(
+                offset: offset,
+                edge: .top,
+                point: point,
+                ignoresSafeArea: ignoresSafeArea,
+                ignoresContentSize: ignoresContentSize
+            )
         }
         
-        public static func fromBottom(_ offset: CGFloat, relativeTo point: Point = .drawerOrigin,
-            ignoresSafeArea: Bool = false, ignoresContentSize: Bool = true) -> RelativePosition
-        {
-            return RelativePosition(offset: offset, edge: .bottom, point: point, ignoresSafeArea: ignoresSafeArea,
-                ignoresContentSize: ignoresContentSize)
+        public static func fromBottom(
+            _ offset: CGFloat,
+            relativeTo point: Point = .drawerOrigin,
+            ignoresSafeArea: Bool = false,
+            ignoresContentSize: Bool = true
+        ) -> RelativePosition {
+            return RelativePosition(
+                offset: offset,
+                edge: .bottom,
+                point: point,
+                ignoresSafeArea: ignoresSafeArea,
+                ignoresContentSize: ignoresContentSize
+            )
         }
     }
     
@@ -91,7 +111,7 @@ open class DrawerView: UIView {
     }
 
     public init(content: Content, headerView: UIView) {
-        snappingView = SnappingView(content: content, headerView: headerView)
+        self.snappingView = SnappingView(content: content, headerView: headerView)
  
         super.init(frame: .zero)
         
@@ -187,6 +207,7 @@ open class DrawerView: UIView {
         notifier.unsubscribe(listener)
     }
     
+    @available(*, unavailable)
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -198,7 +219,7 @@ open class DrawerView: UIView {
     
     // MARK: - UIView
     
-    open override func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
         
         containerView.mask?.frame = bounds
@@ -213,7 +234,7 @@ open class DrawerView: UIView {
     }
     
     @available(iOS 11.0, *)
-    open override func safeAreaInsetsDidChange() {
+    override open func safeAreaInsetsDidChange() {
         super.safeAreaInsetsDidChange()
         updateAnchors()
         if state == .bottom {
@@ -277,7 +298,7 @@ open class DrawerView: UIView {
         let fadingDistance: CGFloat = 40
         
         let diff = anchor(for: .bottom) - origin
-        content.view.alpha = (diff / fadingDistance).clamped(to: 0...1)
+        content.view.alpha = (diff / fadingDistance).clamped(to: 0 ... 1)
     }
     
     // MARK: - Private: Anchors
@@ -292,7 +313,7 @@ open class DrawerView: UIView {
     }
 
     private func updateAnchors() {
-        snappingView.anchors = availableAnchors.map { $0.anchor }
+        snappingView.anchors = availableAnchors.map(\.anchor)
     }
     
     private func targetAnchorForTop(with positionDependencies: PositionDependencies) -> CGFloat {
@@ -341,19 +362,22 @@ open class DrawerView: UIView {
             let totalHeight = content.contentSize.height + content.contentInset.top + content.contentInset.bottom
             let contentOriginPosition: RelativePosition = .fromBottom(totalHeight, relativeTo: .contentOrigin)
 
-            let contentOrigin = DrawerView.targetOriginIgnoringContentSize(for: contentOriginPosition,
-                positionDependencies: positionDependencies)
+            let contentOrigin = DrawerView.targetOriginIgnoringContentSize(
+                for: contentOriginPosition,
+                positionDependencies: positionDependencies
+            )
 
             return max(candidate, contentOrigin)
         }
     }
     
-    private static func targetOriginIgnoringContentSize(for position: RelativePosition,
-        positionDependencies: PositionDependencies) -> CGFloat
-    {
+    private static func targetOriginIgnoringContentSize(
+        for position: RelativePosition,
+        positionDependencies: PositionDependencies
+    ) -> CGFloat {
         var result: CGFloat = position.offset
     
-        switch (position.edge) {
+        switch position.edge {
         case .top:
             if !position.ignoresSafeArea {
                 result += positionDependencies.safeAreaInsets.top
@@ -380,8 +404,11 @@ open class DrawerView: UIView {
     }
     
     private var currentPositionDependencies: PositionDependencies {
-        return PositionDependencies(boundsHeight: bounds.height, headerHeight: headerView.frame.height,
-            safeAreaInsets: getSafeAreaInsets())
+        return PositionDependencies(
+            boundsHeight: bounds.height,
+            headerHeight: headerView.frame.height,
+            safeAreaInsets: getSafeAreaInsets()
+        )
     }
     
     // MARK: - Private: Animation
@@ -396,38 +423,46 @@ open class DrawerView: UIView {
         }
     }
     
-    var animationSession_: AnimationSession? = nil
+    var animationSession_: AnimationSession?
 
 }
 
 
 extension DrawerView: SnappingViewListener {
 
-    public func snappingView(_ snappingView: SnappingView, willBeginUpdatingOrigin origin: CGFloat,
-        source: DrawerOriginChangeSource)
-    {
+    public func snappingView(
+        _ snappingView: SnappingView,
+        willBeginUpdatingOrigin origin: CGFloat,
+        source: DrawerOriginChangeSource
+    ) {
         notifier.forEach { $0.drawerView(self, willBeginUpdatingOrigin: origin, source: source) }
     }
 
-    public func snappingView(_ snappingView: SnappingView, didUpdateOrigin origin: CGFloat,
-        source: DrawerOriginChangeSource)
-    {
+    public func snappingView(
+        _ snappingView: SnappingView,
+        didUpdateOrigin origin: CGFloat,
+        source: DrawerOriginChangeSource
+    ) {
         updateContentVisibility()
         notifier.forEach { $0.drawerView(self, didUpdateOrigin: origin, source: source) }
     }
     
-    public func snappingView(_ snappingView: SnappingView, willBeginAnimation animation: SnappingViewAnimation,
-        source: DrawerOriginChangeSource)
-    {
+    public func snappingView(
+        _ snappingView: SnappingView,
+        willBeginAnimation animation: SnappingViewAnimation,
+        source: DrawerOriginChangeSource
+    ) {
         let targetState = state(forOrigin: animation.targetOrigin)
         animationSession_ = AnimationSession(animation: animation, targetState: targetState)
         
         notifier.forEach { $0.drawerView(self, willBeginAnimationToState: targetState, source: source) }
     }
 
-    public func snappingView(_ snappingView: SnappingView, didEndUpdatingOrigin origin: CGFloat,
-        source: DrawerOriginChangeSource)
-    {
+    public func snappingView(
+        _ snappingView: SnappingView,
+        didEndUpdatingOrigin origin: CGFloat,
+        source: DrawerOriginChangeSource
+    ) {
         if let newState = state(forOrigin: origin), source == .contentInteraction || source == .headerInteraction {
             state_ = newState
         }
@@ -450,14 +485,15 @@ extension DrawerView: DrawerViewContentListener {
         setNeedsLayout()
     }
     
-    public func drawerViewContentDidScroll(_ drawerViewContent: DrawerViewContent) {
-    }
+    public func drawerViewContentDidScroll(_ drawerViewContent: DrawerViewContent) {}
     
-    public func drawerViewContentWillBeginDragging(_ drawerViewContent: DrawerViewContent) {
-    }
+    public func drawerViewContentWillBeginDragging(_ drawerViewContent: DrawerViewContent) {}
     
-    public func drawerViewContentWillEndDragging(_ drawerViewContent: DrawerViewContent, withVelocity velocity: CGPoint,
-        targetContentOffset: UnsafeMutablePointer<CGPoint>)
+    public func drawerViewContentWillEndDragging(
+        _ drawerViewContent: DrawerViewContent,
+        withVelocity velocity: CGPoint,
+        targetContentOffset: UnsafeMutablePointer<CGPoint>
+    )
     {}
     
 }

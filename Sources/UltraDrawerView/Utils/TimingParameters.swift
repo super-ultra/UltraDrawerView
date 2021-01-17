@@ -1,5 +1,5 @@
-import Foundation
 import CoreGraphics
+import Foundation
 
 internal protocol TimingParameters {
     var duration: TimeInterval { get }

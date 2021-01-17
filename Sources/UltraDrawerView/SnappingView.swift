@@ -2,12 +2,12 @@ import UIKit
 
 
 /// SnappingViewAnimation allows to control targetOrigin during animation
-public protocol SnappingViewAnimation: class {
+public protocol SnappingViewAnimation: AnyObject {
     var targetOrigin: CGFloat { get set }
     var isDone: Bool { get }
 }
 
-public protocol SnappingViewListener: class {
+public protocol SnappingViewListener: AnyObject {
     func snappingView(_ snappingView: SnappingView, willBeginUpdatingOrigin origin: CGFloat, source: DrawerOriginChangeSource)
     func snappingView(_ snappingView: SnappingView, didUpdateOrigin origin: CGFloat, source: DrawerOriginChangeSource)
     func snappingView(_ snappingView: SnappingView, didEndUpdatingOrigin origin: CGFloat, source: DrawerOriginChangeSource)
@@ -73,6 +73,7 @@ open class SnappingView: UIView {
         notifier.unsubscribe(listener)
     }
     
+    @available(*, unavailable)
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -121,7 +122,7 @@ open class SnappingView: UIView {
         
         headerView.translatesAutoresizingMaskIntoConstraints = false
         headerView.set([.left, .right, .top], equalTo: containerView)
-        if headerView.constraints.isEmpty && !type(of: headerView).requiresConstraintBasedLayout {
+        if headerView.constraints.isEmpty, !type(of: headerView).requiresConstraintBasedLayout {
             headerView.set(.height, equalTo: headerView.frame.height)
         }
     }
@@ -169,7 +170,7 @@ open class SnappingView: UIView {
     
     private var anchorLimits: ClosedRange<CGFloat>? {
         if let min = anchors.min(), let max = anchors.max() {
-            return min...max
+            return min ... max
         } else {
             return nil
         }
@@ -193,7 +194,7 @@ open class SnappingView: UIView {
         case .changed:
             let translation = sender.translation(in: headerView)
         
-            if case .dragging(let initialOrigin) = headerState {
+            if case let .dragging(initialOrigin) = headerState {
                 let newOrigin = clampTargetHeaderOrigin(initialOrigin + translation.y)
                 setOrigin(newOrigin, source: .headerInteraction)
             }
@@ -256,9 +257,11 @@ open class SnappingView: UIView {
         return anchor
     }
     
-    private func moveOriginToTheNearestAnchor(withVelocity velocity: CGFloat, source: DrawerOriginChangeSource,
-        completion: ((Bool) -> Void)? = nil)
-    {
+    private func moveOriginToTheNearestAnchor(
+        withVelocity velocity: CGFloat,
+        source: DrawerOriginChangeSource,
+        completion: ((Bool) -> Void)? = nil
+    ) {
         let decelerationRate = UIScrollView.DecelerationRate.fast.rawValue
         let projection = origin.project(initialVelocity: velocity, decelerationRate: decelerationRate)
         
@@ -278,9 +281,13 @@ open class SnappingView: UIView {
         }
     }
     
-    private func moveOrigin(to newOriginY: CGFloat, source: DrawerOriginChangeSource, animated: Bool,
-        velocity: CGFloat? = nil, completion: ((Bool) -> Void)? = nil)
-    {
+    private func moveOrigin(
+        to newOriginY: CGFloat,
+        source: DrawerOriginChangeSource,
+        animated: Bool,
+        velocity: CGFloat? = nil,
+        completion: ((Bool) -> Void)? = nil
+    ) {
         if !animated {
             setOrigin(newOriginY, source: source)
             notifyDidEndUpdatingOrigin(with: source)
@@ -298,7 +305,8 @@ open class SnappingView: UIView {
             completion: { [weak self] finished in
                 self?.notifyDidEndUpdatingOrigin(with: source)
                 completion?(finished)
-            })
+            }
+        )
         
         self.originAnimation = originAnimation
     
@@ -314,11 +322,9 @@ open class SnappingView: UIView {
 
 extension SnappingView: DrawerViewContentListener {
 
-    public func drawerViewContent(_ drawerViewContent: DrawerViewContent, didChangeContentSize contentSize: CGSize) {
-    }
+    public func drawerViewContent(_ drawerViewContent: DrawerViewContent, didChangeContentSize contentSize: CGSize) {}
     
-    public func drawerViewContent(_ drawerViewContent: DrawerViewContent, didChangeContentInset contentInset: UIEdgeInsets) {
-    }
+    public func drawerViewContent(_ drawerViewContent: DrawerViewContent, didChangeContentInset contentInset: UIEdgeInsets) {}
     
     public func drawerViewContentDidScroll(_ drawerViewContent: DrawerViewContent) {
         guard case let .dragging(lastContentOffset) = contentState else { return }
@@ -332,11 +338,11 @@ extension SnappingView: DrawerViewContentListener {
         let diff = lastContentOffset.y - drawerViewContent.contentOffset.y
     
         if (diff < 0
-                && drawerViewContent.contentOffset.y > -drawerViewContent.contentInset.top
-                && origin.isGreater(than: limits.lowerBound, eps: Static.originEps))
+            && drawerViewContent.contentOffset.y > -drawerViewContent.contentInset.top
+            && origin.isGreater(than: limits.lowerBound, eps: Static.originEps))
             || (diff > 0
-                    && drawerViewContent.contentOffset.y < -drawerViewContent.contentInset.top
-                    && origin.isLess(than: limits.upperBound, eps: Static.originEps))
+                && drawerViewContent.contentOffset.y < -drawerViewContent.contentInset.top
+                && origin.isLess(than: limits.upperBound, eps: Static.originEps))
         {
             // Drop contentOffset changing
             drawerViewContent.removeListener(self)
@@ -360,9 +366,11 @@ extension SnappingView: DrawerViewContentListener {
         notifyWillBeginUpdatingOrigin(with: .contentInteraction)
     }
     
-    public func drawerViewContentWillEndDragging(_ drawerViewContent: DrawerViewContent, withVelocity velocity: CGPoint,
-        targetContentOffset: UnsafeMutablePointer<CGPoint>)
-    {
+    public func drawerViewContentWillEndDragging(
+        _ drawerViewContent: DrawerViewContent,
+        withVelocity velocity: CGPoint,
+        targetContentOffset: UnsafeMutablePointer<CGPoint>
+    ) {
         contentState = .normal
     
         guard let limits = anchorLimits, limits.contains(origin, eps: Static.originEps) else { return }

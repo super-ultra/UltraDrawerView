@@ -10,6 +10,7 @@ internal final class CornerRadiusMaskView: UIImageView {
         image = UIImage.make(byRoundingCorners: [.topLeft, .topRight], radius: radius)
     }
 
+    @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

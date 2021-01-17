@@ -1,7 +1,7 @@
 import UIKit
 
 #if canImport(UltraDrawerViewObjCUtils)
-import UltraDrawerViewObjCUtils
+    import UltraDrawerViewObjCUtils
 #endif
 
 /// It is compatible with any type of UIScrollView and UIScrollViewDelegate:
@@ -23,7 +23,7 @@ open class ScrollDrawerViewContent: DrawerViewContent {
     }
 
     public init(scrollView: UIScrollView, delegate: UIScrollViewDelegate?) {
-        impl = Impl(scrollView: scrollView, delegate: delegate)
+        self.impl = Impl(scrollView: scrollView, delegate: delegate)
     }
 
     // MARK: - DrawerViewContent
@@ -88,7 +88,7 @@ private class ScrollDrawerViewContentImpl: NSObject {
         
         scrollView.delegate = delegateProxy
         
-        scrollViewObservations = [
+        self.scrollViewObservations = [
             scrollView.observe(\.contentSize, options: [.new, .old]) { [weak self] _, value in
                 guard let slf = self, let newValue = value.newValue, value.isChanged else { return }
                 self?.notifier.forEach { $0.drawerViewContent(slf, didChangeContentSize: newValue) }
@@ -96,7 +96,7 @@ private class ScrollDrawerViewContentImpl: NSObject {
             scrollView.observe(\.contentInset, options: [.new, .old]) { [weak self] _, value in
                 guard let slf = self, let newValue = value.newValue, value.isChanged else { return }
                 self?.notifier.forEach { $0.drawerViewContent(slf, didChangeContentInset: newValue) }
-            }
+            },
         ]
     }
     
@@ -158,9 +158,11 @@ extension ScrollDrawerViewContentImpl: UIScrollViewDelegate {
         notifier.forEach { $0.drawerViewContentWillBeginDragging(self) }
     }
     
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint,
-        targetContentOffset: UnsafeMutablePointer<CGPoint>)
-    {
+    func scrollViewWillEndDragging(
+        _ scrollView: UIScrollView,
+        withVelocity velocity: CGPoint,
+        targetContentOffset: UnsafeMutablePointer<CGPoint>
+    ) {
         notifier.forEach {
             $0.drawerViewContentWillEndDragging(self, withVelocity: velocity, targetContentOffset: targetContentOffset)
         }

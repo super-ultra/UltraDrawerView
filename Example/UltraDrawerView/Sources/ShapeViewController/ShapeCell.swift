@@ -1,6 +1,5 @@
 import UIKit
 
-
 final class ShapeCell: UITableViewCell {
 
     struct Info {
@@ -9,7 +8,7 @@ final class ShapeCell: UITableViewCell {
         var shape: UIBezierPath
     }
     
-    struct Layout {
+    enum Layout {
         static let inset: CGFloat = 18
         static let shapeSize: CGFloat = 48
         static let estimatedHeight: CGFloat = 40
@@ -21,6 +20,7 @@ final class ShapeCell: UITableViewCell {
         setupViews()
     }
     
+    @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -46,7 +46,7 @@ final class ShapeCell: UITableViewCell {
     private let shapeLayer = CAShapeLayer()
     private let titleLabel = UILabel()
     private let subtitleLabel = UILabel()
-    private var info: Info? = nil
+    private var info: Info?
     
     private func setupViews() {
         backgroundColor = .white

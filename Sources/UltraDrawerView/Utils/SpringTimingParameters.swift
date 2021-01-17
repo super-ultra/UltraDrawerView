@@ -1,5 +1,5 @@
-import Foundation
 import CoreGraphics
+import Foundation
 
 /// https://en.wikipedia.org/wiki/Harmonic_oscillator
 ///
@@ -70,15 +70,19 @@ public struct SpringTimingParameters {
         self.threshold = threshold
         
         if spring.dampingRatio == 1 {
-            impl = CriticallyDampedSpringTimingParameters(spring: spring,
-                                                          displacement: displacement,
-                                                          initialVelocity: initialVelocity,
-                                                          threshold: threshold)
-        } else if spring.dampingRatio > 0 && spring.dampingRatio < 1 {
-            impl = UnderdampedSpringTimingParameters(spring: spring,
-                                                     displacement: displacement,
-                                                     initialVelocity: initialVelocity,
-                                                     threshold: threshold)
+            self.impl = CriticallyDampedSpringTimingParameters(
+                spring: spring,
+                displacement: displacement,
+                initialVelocity: initialVelocity,
+                threshold: threshold
+            )
+        } else if spring.dampingRatio > 0, spring.dampingRatio < 1 {
+            self.impl = UnderdampedSpringTimingParameters(
+                spring: spring,
+                displacement: displacement,
+                initialVelocity: initialVelocity,
+                threshold: threshold
+            )
         } else {
             fatalError("dampingRatio should be greater than 0 and less than or equal to 1")
         }
@@ -109,7 +113,7 @@ private struct UnderdampedSpringTimingParameters {
 extension UnderdampedSpringTimingParameters: TimingParameters {
     
     var duration: TimeInterval {
-        if displacement == 0 && initialVelocity == 0 {
+        if displacement == 0, initialVelocity == 0 {
             return 0
         }
         
@@ -144,7 +148,7 @@ private struct CriticallyDampedSpringTimingParameters {
 extension CriticallyDampedSpringTimingParameters: TimingParameters {
     
     var duration: TimeInterval {
-        if displacement == 0 && initialVelocity == 0 {
+        if displacement == 0, initialVelocity == 0 {
             return 0
         }
         
