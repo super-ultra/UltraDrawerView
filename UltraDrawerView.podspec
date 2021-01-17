@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'UltraDrawerView'
-  s.version          = '0.3.0'
+  s.version          = '0.4.0'
   s.summary          = 'Simple swipe up view'
   s.homepage         = 'https://github.com/super-ultra/UltraDrawerView'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
