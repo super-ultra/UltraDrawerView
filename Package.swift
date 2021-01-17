@@ -7,7 +7,6 @@ let package = Package(
     platforms: [
         .iOS(.v9)
     ],
-    swiftLanguageVersions: [.v5],
     products: [
         .library(
             name: "UltraDrawerView",
@@ -18,14 +17,15 @@ let package = Package(
             name: "UltraDrawerViewObjCUtils",
             dependencies: [],
             linkerSettings: [
-               .linkedFramework("Foundation"),
-               .linkedFramework("UIKit")
-           ]),
+                .linkedFramework("Foundation"),
+                .linkedFramework("UIKit")
+            ]),
         .target(
             name: "UltraDrawerView",
             dependencies: ["UltraDrawerViewObjCUtils"]),
         .testTarget(
             name: "UltraDrawerViewTests",
             dependencies: ["UltraDrawerView"]),
-    ]
+    ],
+    swiftLanguageVersions: [.v5]
 )
