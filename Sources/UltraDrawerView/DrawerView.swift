@@ -99,16 +99,6 @@ open class DrawerView: UIView {
             self.safeAreaInsets = safeAreaInsets
         }
     }
-    
-    /// Indicates whether or not the drawer fades its content in bottom state
-    public var shouldFadeInBottomState: Bool = true
-    
-    /// A Boolean value that controls whether the scroll view bounces past the edge of content and back again
-    public var bounces: Bool = true {
-        didSet {
-            snappingView.bounces = bounces
-        }
-    }
 
     public init(content: Content, headerView: UIView) {
         self.snappingView = SnappingView(content: content, headerView: headerView)
@@ -196,6 +186,31 @@ open class DrawerView: UIView {
         }
         get {
             return (containerView.mask as? CornerRadiusMaskView)?.radius ?? 0
+        }
+    }
+
+    /// Indicates whether or not the drawer fades its content in bottom state
+    open var shouldFadeInBottomState: Bool = true
+
+    /// A Boolean value that controls whether the scroll view bounces past the edge of content and back again
+    open var bounces: Bool {
+        get {
+            return snappingView.bounces
+        }
+        set {
+            snappingView.bounces = newValue
+        }
+    }
+
+    /// The preferred frame rate for the animation.
+    /// It is equal to UIScreen.main.maximumFramesPerSecond by default.
+    @available(iOS 10.0, *)
+    open var preferredAnimationFramesPerSecond: Int {
+        get {
+            return snappingView.preferredAnimationFramesPerSecond
+        }
+        set {
+            snappingView.preferredAnimationFramesPerSecond = newValue
         }
     }
     
