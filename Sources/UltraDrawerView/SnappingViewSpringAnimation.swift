@@ -7,12 +7,14 @@ internal final class SnappingViewSpringAnimation: SnappingViewAnimation {
         initialOrigin: CGFloat,
         targetOrigin: CGFloat,
         initialVelocity: CGFloat,
+        preferredFramesPerSecond: Int,
         onUpdate: @escaping (CGFloat) -> Void,
         completion: @escaping (Bool) -> Void
     ) {
         self.currentOrigin = initialOrigin
         self.currentVelocity = initialVelocity
         self.targetOrigin = targetOrigin
+        self.preferredFramesPerSecond = preferredFramesPerSecond
         self.onUpdate = onUpdate
         self.completion = completion
         
@@ -39,6 +41,7 @@ internal final class SnappingViewSpringAnimation: SnappingViewAnimation {
     
     private var currentOrigin: CGFloat
     private var currentVelocity: CGFloat
+    private let preferredFramesPerSecond: Int
     private let onUpdate: (CGFloat) -> Void
     private let completion: (Bool) -> Void
     private var animation: TimerAnimation?
@@ -55,7 +58,7 @@ internal final class SnappingViewSpringAnimation: SnappingViewAnimation {
             spring: .default,
             displacement: from - to,
             initialVelocity: currentVelocity,
-            threshold: 1 / UIScreen.main.scale
+            threshold: 1
         )
         
         let duration = parameters.duration
@@ -67,7 +70,16 @@ internal final class SnappingViewSpringAnimation: SnappingViewAnimation {
                 self.currentOrigin = to + parameters.value(at: time)
                 self.onUpdate(self.currentOrigin)
             },
-            completion: completion
+            completion: { [onUpdate, completion] finished in
+                if finished {
+                    onUpdate(to)
+                }
+                completion(finished)
+            }
         )
+
+        if #available(iOS 10.0, *) {
+            animation?.preferredFramesPerSecond = preferredFramesPerSecond
+        }
     }
 }
