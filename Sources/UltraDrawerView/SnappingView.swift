@@ -47,6 +47,9 @@ open class SnappingView: UIView {
     
     /// A Boolean value that controls whether the scroll view bounces past the edge of content and back again
     open var bounces: Bool = true
+
+    /// Animation parameters for the transitions between anchors
+    open var animationParameters: AnimationParameters = .spring(.default)
     
     public init(content: Content, headerView: UIView) {
         self.content = content
@@ -299,6 +302,7 @@ open class SnappingView: UIView {
             initialOrigin: origin,
             targetOrigin: newOriginY,
             initialVelocity: velocity ?? 0,
+            parameters: animationParameters,
             onUpdate: { [weak self] value in
                 self?.setOrigin(value, source: source)
             },

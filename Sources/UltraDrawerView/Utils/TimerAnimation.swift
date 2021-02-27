@@ -2,13 +2,17 @@ import QuartzCore
 
 internal final class TimerAnimation {
 
-    typealias Animations = (_ progress: Double, _ time: TimeInterval) -> Void
+    enum TargetState {
+        case `continue`
+        case finish
+    }
+
+    typealias Animations = (_ time: TimeInterval) -> TargetState
     typealias Completion = (_ finished: Bool) -> Void
     
     private(set) var running: Bool = true
     
-    init(duration: TimeInterval, animations: @escaping Animations, completion: Completion? = nil) {
-        self.duration = duration
+    init(animations: @escaping Animations, completion: Completion? = nil) {
         self.animations = animations
         self.completion = completion
 
@@ -34,7 +38,6 @@ internal final class TimerAnimation {
     
     // MARK: - Private
 
-    private let duration: TimeInterval
     private let animations: Animations
     private let completion: Completion?
     private weak var displayLink: CADisplayLink?
@@ -44,13 +47,15 @@ internal final class TimerAnimation {
     @objc private func handleFrame(_ displayLink: CADisplayLink) {
         guard running else { return }
         let elapsed = CACurrentMediaTime() - firstFrameTimestamp
-        if elapsed >= duration {
-            animations(1, duration)
+
+        let targetState = animations(elapsed)
+        switch targetState {
+        case .continue:
+            break
+        case .finish:
             running = false
             completion?(true)
             displayLink.invalidate()
-        } else {
-            animations(elapsed / duration, elapsed)
         }
     }
 }

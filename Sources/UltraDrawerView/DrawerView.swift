@@ -201,6 +201,16 @@ open class DrawerView: UIView {
             snappingView.bounces = newValue
         }
     }
+
+    /// Animation parameters for the transitions between anchors
+    open var animationParameters: AnimationParameters {
+        get {
+            return snappingView.animationParameters
+        }
+        set {
+            snappingView.animationParameters = newValue
+        }
+    }
     
     open func addListener(_ listener: DrawerViewListener) {
         notifier.subscribe(listener)
