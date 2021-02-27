@@ -202,15 +202,13 @@ open class DrawerView: UIView {
         }
     }
 
-    /// The preferred frame rate for the animation.
-    /// It is equal to UIScreen.main.maximumFramesPerSecond by default.
-    @available(iOS 10.0, *)
-    open var preferredAnimationFramesPerSecond: Int {
+    /// Animation parameters for the transitions between anchors
+    open var animationParameters: AnimationParameters {
         get {
-            return snappingView.preferredAnimationFramesPerSecond
+            return snappingView.animationParameters
         }
         set {
-            snappingView.preferredAnimationFramesPerSecond = newValue
+            snappingView.animationParameters = newValue
         }
     }
     

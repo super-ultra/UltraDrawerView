@@ -7,14 +7,15 @@ internal final class SnappingViewSpringAnimation: SnappingViewAnimation {
         initialOrigin: CGFloat,
         targetOrigin: CGFloat,
         initialVelocity: CGFloat,
-        preferredFramesPerSecond: Int,
+        parameters: AnimationParameters,
         onUpdate: @escaping (CGFloat) -> Void,
         completion: @escaping (Bool) -> Void
     ) {
         self.currentOrigin = initialOrigin
         self.currentVelocity = initialVelocity
         self.targetOrigin = targetOrigin
-        self.preferredFramesPerSecond = preferredFramesPerSecond
+        self.parameters = parameters
+        self.threshold = 0.5
         self.onUpdate = onUpdate
         self.completion = completion
         
@@ -41,7 +42,8 @@ internal final class SnappingViewSpringAnimation: SnappingViewAnimation {
     
     private var currentOrigin: CGFloat
     private var currentVelocity: CGFloat
-    private let preferredFramesPerSecond: Int
+    private let parameters: AnimationParameters
+    private let threshold: CGFloat
     private let onUpdate: (CGFloat) -> Void
     private let completion: (Bool) -> Void
     private var animation: TimerAnimation?
@@ -50,25 +52,20 @@ internal final class SnappingViewSpringAnimation: SnappingViewAnimation {
         guard !isDone else { return }
         
         animation?.invalidate(withColmpletion: false)
-        
-        let from = currentOrigin
+
         let to = targetOrigin
-    
-        let parameters = SpringTimingParameters(
-            spring: .default,
-            displacement: from - to,
-            initialVelocity: currentVelocity,
-            threshold: 1
-        )
+        let timingParameters = makeTimingParameters()
         
-        let duration = parameters.duration
-    
         animation = TimerAnimation(
-            duration: duration,
-            animations: { [weak self] _, time in
-                guard let self = self else { return }
-                self.currentOrigin = to + parameters.value(at: time)
+            animations: { [weak self, timingParameters, threshold] time in
+                guard let self = self else {
+                    return .finish
+                }
+
+                self.currentOrigin = to + timingParameters.value(at: time)
                 self.onUpdate(self.currentOrigin)
+
+                return timingParameters.amplitude(at: time) < threshold ? .finish : .continue
             },
             completion: { [onUpdate, completion] finished in
                 if finished {
@@ -77,9 +74,20 @@ internal final class SnappingViewSpringAnimation: SnappingViewAnimation {
                 completion(finished)
             }
         )
+    }
 
-        if #available(iOS 10.0, *) {
-            animation?.preferredFramesPerSecond = preferredFramesPerSecond
+    private func makeTimingParameters() -> DampingTimingParameters {
+        let from = currentOrigin
+        let to = targetOrigin
+
+        switch parameters {
+        case let .spring(spring):
+            return SpringTimingParameters(
+                spring: spring,
+                displacement: from - to,
+                initialVelocity: currentVelocity,
+                threshold: threshold
+            )
         }
     }
 }

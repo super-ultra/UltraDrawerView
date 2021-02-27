@@ -61,7 +61,7 @@ public struct SpringTimingParameters {
     public let displacement: CGFloat
     public let initialVelocity: CGFloat
     public let threshold: CGFloat
-    private let impl: TimingParameters
+    private let impl: DampingTimingParameters
         
     public init(spring: Spring, displacement: CGFloat, initialVelocity: CGFloat, threshold: CGFloat) {
         self.spring = spring
@@ -89,14 +89,18 @@ public struct SpringTimingParameters {
     }
 }
 
-extension SpringTimingParameters: TimingParameters {
-    
+extension SpringTimingParameters: DampingTimingParameters {
+
     public var duration: TimeInterval {
         return impl.duration
     }
     
     public func value(at time: TimeInterval) -> CGFloat {
         return impl.value(at: time)
+    }
+
+    public func amplitude(at time: TimeInterval) -> CGFloat {
+        return impl.amplitude(at: time)
     }
         
 }
@@ -110,7 +114,7 @@ private struct UnderdampedSpringTimingParameters {
     let threshold: CGFloat
 }
 
-extension UnderdampedSpringTimingParameters: TimingParameters {
+extension UnderdampedSpringTimingParameters: DampingTimingParameters {
     
     var duration: TimeInterval {
         if displacement == 0, initialVelocity == 0 {
@@ -124,6 +128,11 @@ extension UnderdampedSpringTimingParameters: TimingParameters {
         let t = CGFloat(time)
         let wd = spring.dampedNaturalFrequency
         return exp(-spring.beta * t) * (c1 * cos(wd * t) + c2 * sin(wd * t))
+    }
+
+    func amplitude(at time: TimeInterval) -> CGFloat {
+        let t = CGFloat(time)
+        return exp(-spring.beta * t) * (abs(c1) + abs(c2))
     }
 
     // MARK: - Private
@@ -145,7 +154,7 @@ private struct CriticallyDampedSpringTimingParameters {
     let threshold: CGFloat
 }
 
-extension CriticallyDampedSpringTimingParameters: TimingParameters {
+extension CriticallyDampedSpringTimingParameters: DampingTimingParameters {
     
     var duration: TimeInterval {
         if displacement == 0, initialVelocity == 0 {
@@ -164,6 +173,10 @@ extension CriticallyDampedSpringTimingParameters: TimingParameters {
     func value(at time: TimeInterval) -> CGFloat {
         let t = CGFloat(time)
         return exp(-spring.beta * t) * (c1 + c2 * t)
+    }
+
+    func amplitude(at time: TimeInterval) -> CGFloat {
+        return abs(value(at: time))
     }
 
     // MARK: - Private

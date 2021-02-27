@@ -1,6 +1,6 @@
 {
   "name": "UltraDrawerView",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "summary": "Simple swipe up view",
   "homepage": "https://github.com/super-ultra/UltraDrawerView",
   "license": {
@@ -12,13 +12,13 @@
   },
   "source": {
     "git": "https://github.com/super-ultra/UltraDrawerView.git",
-    "tag": "0.5.0"
+    "tag": "0.6.0"
   },
   "platforms": {
     "ios": "9.0"
   },
-  "swift_versions": "5.0",
+  "swift_versions": "5.3",
   "source_files": "Sources/**/*",
   "frameworks": "UIKit",
-  "swift_version": "5.0"
+  "swift_version": "5.3"
 }
