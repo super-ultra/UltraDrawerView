@@ -6,16 +6,6 @@ internal final class TimerAnimation {
     typealias Completion = (_ finished: Bool) -> Void
     
     private(set) var running: Bool = true
-
-    @available(iOS 10.0, *)
-    var preferredFramesPerSecond: Int {
-        get {
-            return displayLink?.preferredFramesPerSecond ?? 0
-        }
-        set {
-            displayLink?.preferredFramesPerSecond = newValue
-        }
-    }
     
     init(duration: TimeInterval, animations: @escaping Animations, completion: Completion? = nil) {
         self.duration = duration

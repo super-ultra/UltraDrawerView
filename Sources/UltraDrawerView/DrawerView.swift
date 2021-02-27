@@ -201,18 +201,6 @@ open class DrawerView: UIView {
             snappingView.bounces = newValue
         }
     }
-
-    /// The preferred frame rate for the animation.
-    /// It is equal to UIScreen.main.maximumFramesPerSecond by default.
-    @available(iOS 10.0, *)
-    open var preferredAnimationFramesPerSecond: Int {
-        get {
-            return snappingView.preferredAnimationFramesPerSecond
-        }
-        set {
-            snappingView.preferredAnimationFramesPerSecond = newValue
-        }
-    }
     
     open func addListener(_ listener: DrawerViewListener) {
         notifier.subscribe(listener)

@@ -47,18 +47,6 @@ open class SnappingView: UIView {
     
     /// A Boolean value that controls whether the scroll view bounces past the edge of content and back again
     open var bounces: Bool = true
-
-    /// The preferred frame rate for the animation.
-    /// It is equal to UIScreen.main.maximumFramesPerSecond by default.
-    @available(iOS 10.0, *)
-    open var preferredAnimationFramesPerSecond: Int {
-        get {
-            return _preferredAnimationFramesPerSecond
-        }
-        set {
-            _preferredAnimationFramesPerSecond = newValue
-        }
-    }
     
     public init(content: Content, headerView: UIView) {
         self.content = content
@@ -66,12 +54,6 @@ open class SnappingView: UIView {
         self.containerView = UIView()
         self.origin = 0
         self.anchors = []
-
-        if #available(iOS 10.3, *) {
-            self._preferredAnimationFramesPerSecond = UIScreen.main.maximumFramesPerSecond
-        } else {
-            self._preferredAnimationFramesPerSecond = 60
-        }
 
         super.init(frame: .zero)
         
@@ -257,8 +239,6 @@ open class SnappingView: UIView {
     
     // MARK: - Private: Anchors
 
-    private var _preferredAnimationFramesPerSecond: Int
-
     private var originAnimation: SnappingViewSpringAnimation?
     
     private func selectNextAnchor(to anchor: CGFloat, velocity: CGFloat) -> CGFloat {
@@ -319,7 +299,6 @@ open class SnappingView: UIView {
             initialOrigin: origin,
             targetOrigin: newOriginY,
             initialVelocity: velocity ?? 0,
-            preferredFramesPerSecond: _preferredAnimationFramesPerSecond,
             onUpdate: { [weak self] value in
                 self?.setOrigin(value, source: source)
             },
