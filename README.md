@@ -15,7 +15,7 @@ drawerView.containerView.backgroundColor = .white
 drawerView.setState(.middle, animated: false)
 
 // More fluctuations 
-drawerView.animationParameters = .spring(Spring(mass: 1, stiffness: 200, dampingRatio: 0.5))
+drawerView.animationParameters = .spring(mass: 1, stiffness: 200, dampingRatio: 0.5)
 
 // Default UIScrollView like behavior
 drawerView.animationParameters = .spring(.default)
