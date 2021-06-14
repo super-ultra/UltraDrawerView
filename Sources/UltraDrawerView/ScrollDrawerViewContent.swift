@@ -28,11 +28,11 @@ open class ScrollDrawerViewContent: DrawerViewContent {
 
     // MARK: - DrawerViewContent
     
-    public var view: UIView {
+    open var view: UIView {
         return impl.view
     }
     
-    public var contentOffset: CGPoint {
+    open var contentOffset: CGPoint {
         get {
             return impl.contentOffset
         }
@@ -41,19 +41,19 @@ open class ScrollDrawerViewContent: DrawerViewContent {
         }
     }
     
-    public var contentSize: CGSize {
+    open var contentSize: CGSize {
         return impl.contentSize
     }
     
-    public var contentInset: UIEdgeInsets {
+    open var contentInset: UIEdgeInsets {
         return impl.contentInset
     }
     
-    public func addListener(_ listener: DrawerViewContentListener) {
+    open func addListener(_ listener: DrawerViewContentListener) {
         impl.addListener(listener)
     }
     
-    public func removeListener(_ listener: DrawerViewContentListener) {
+    open func removeListener(_ listener: DrawerViewContentListener) {
         impl.removeListener(listener)
     }
     
