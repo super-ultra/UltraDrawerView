@@ -95,7 +95,7 @@ final class ShapeCell: UITableViewCell {
     }
     
     private func updateShapeColors() {
-        shapeLayer.fillColor = UIColor.randomExtraLight.cgColor
+        shapeLayer.fillColor = UIColor.randomLight.cgColor
         shapeLayer.strokeColor = UIColor.randomDark.cgColor
     }
     

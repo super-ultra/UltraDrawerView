@@ -25,12 +25,13 @@ final class ShapeViewController: UIViewController {
         
         tableView.backgroundColor = .white
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(ShapeCell.self, forCellReuseIdentifier: "\(ShapeCell.self)")
         if #available(iOS 11.0, *) {
             tableView.contentInsetAdjustmentBehavior = .never
         }
         
-        drawerView = DrawerView(scrollView: tableView, delegate: self, headerView: headerView)
+        drawerView = DrawerView(scrollView: tableView, headerView: headerView)
         drawerView.middlePosition = .fromBottom(Layout.middleInsetFromBottom)
         drawerView.cornerRadius = Layout.cornerRadius
         drawerView.containerView.backgroundColor = .white

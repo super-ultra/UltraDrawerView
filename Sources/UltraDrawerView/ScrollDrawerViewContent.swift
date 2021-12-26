@@ -12,18 +12,9 @@ open class ScrollDrawerViewContent: DrawerViewContent {
     open var scrollView: UIScrollView {
         return impl.scrollView
     }
-    
-    open var delegate: UIScrollViewDelegate? {
-        get {
-            return impl.delegate
-        }
-        set {
-            impl.delegate = newValue
-        }
-    }
 
-    public init(scrollView: UIScrollView, delegate: UIScrollViewDelegate?) {
-        self.impl = Impl(scrollView: scrollView, delegate: delegate)
+    public init(scrollView: UIScrollView) {
+        self.impl = Impl(scrollView: scrollView)
     }
 
     // MARK: - DrawerViewContent
@@ -71,32 +62,26 @@ private class ScrollDrawerViewContentImpl: NSObject {
     
     let scrollView: UIScrollView
     
-    weak var delegate: UIScrollViewDelegate? {
-        didSet {
-            delegateProxy.supplementaryDelegate = delegate
-        }
-    }
-    
-    init(scrollView: UIScrollView, delegate: UIScrollViewDelegate?) {
+    init(scrollView: UIScrollView) {
         self.scrollView = scrollView
-        self.delegate = delegate
         
         super.init()
         
-        delegateProxy.mainDelegate = self
-        delegateProxy.supplementaryDelegate = delegate
-        
-        scrollView.delegate = delegateProxy
+        setupDelegate()
         
         self.scrollViewObservations = [
             scrollView.observe(\.contentSize, options: [.new, .old]) { [weak self] _, value in
-                guard let slf = self, let newValue = value.newValue, value.isChanged else { return }
-                self?.notifier.forEach { $0.drawerViewContent(slf, didChangeContentSize: newValue) }
+                guard let self = self, let newValue = value.newValue, value.isChanged else { return }
+                self.notifier.forEach { $0.drawerViewContent(self, didChangeContentSize: newValue) }
             },
             scrollView.observe(\.contentInset, options: [.new, .old]) { [weak self] _, value in
-                guard let slf = self, let newValue = value.newValue, value.isChanged else { return }
-                self?.notifier.forEach { $0.drawerViewContent(slf, didChangeContentInset: newValue) }
+                guard let self = self, let newValue = value.newValue, value.isChanged else { return }
+                self.notifier.forEach { $0.drawerViewContent(self, didChangeContentInset: newValue) }
             },
+            scrollView.observe(\.delegate, options: [.new, .old]) { [weak self] _, value in
+                guard let self = self, let old = value.newValue, old !== self.delegateProxy else { return }
+                self.setupDelegate()
+            }
         ]
     }
     
@@ -112,6 +97,13 @@ private class ScrollDrawerViewContentImpl: NSObject {
     private var scrollViewObservations: [NSKeyValueObservation] = []
     
     private let delegateProxy = SVPrivateScrollDelegateProxy()
+    
+    private func setupDelegate() {
+        delegateProxy.mainDelegate = self
+        delegateProxy.supplementaryDelegate = scrollView.delegate
+        
+        scrollView.delegate = delegateProxy
+    }
     
 }
 

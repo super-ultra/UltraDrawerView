@@ -9,7 +9,7 @@ final class ShapeHeaderView: UIView {
     
         addSubview(button)
         button.tintColor = .black
-        button.backgroundColor = .randomExtraLight
+        button.backgroundColor = .randomLight
         button.setTitle("Favourite shapes", for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 24)
         button.contentHorizontalAlignment = .left
@@ -41,7 +41,7 @@ final class ShapeHeaderView: UIView {
     private let separator = UIView()
     
     @objc private func handleButton() {
-        button.backgroundColor = .randomExtraLight
+        button.backgroundColor = .randomLight
     }
 
 }
