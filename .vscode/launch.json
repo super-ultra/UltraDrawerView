@@ -1,0 +1,15 @@
+{
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Test UltraDrawerView",
+            "program": "/Applications/Xcode.app/Contents/Developer/usr/bin/xctest",
+            "args": [
+                ".build/debug/UltraDrawerViewPackageTests.xctest"
+            ],
+            "cwd": "${workspaceFolder:UltraDrawerView}",
+            "preLaunchTask": "swift: Build All"
+        }
+    ]
+}
