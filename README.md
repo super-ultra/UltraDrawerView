@@ -7,7 +7,7 @@ headerView.heightAnchor.constraint(equalToConstant: 64).isActive = true
 
 let tableView = UITableView()
 
-let drawerView = DrawerView(scrollView: tableView, delegate: self, headerView: headerView)
+let drawerView = DrawerView(scrollView: tableView, headerView: headerView)
 drawerView.availableStates = [.top, .middle, .bottom]
 drawerView.middlePosition = .fromBottom(256)
 drawerView.cornerRadius = 16
