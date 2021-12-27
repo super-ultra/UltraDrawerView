@@ -30,10 +30,10 @@
 
 - (NSMethodSignature*)methodSignatureForSelector:(SEL)selector
 {
-    NSMethodSignature* signature = [self.mainDelegateClass instanceMethodSignatureForSelector:selector];
+    NSMethodSignature* signature = [self.mainDelegate methodSignatureForSelector:selector];
     
     if (!signature) {
-       signature = [self.supplementaryDelegateClass instanceMethodSignatureForSelector:selector];
+       signature = [self.supplementaryDelegate methodSignatureForSelector:selector];
     }
     
     return signature;
