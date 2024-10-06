@@ -8,9 +8,16 @@ public protocol SnappingViewAnimation: AnyObject {
 }
 
 public protocol SnappingViewListener: AnyObject {
+    @MainActor
     func snappingView(_ snappingView: SnappingView, willBeginUpdatingOrigin origin: CGFloat, source: DrawerOriginChangeSource)
+    
+    @MainActor
     func snappingView(_ snappingView: SnappingView, didUpdateOrigin origin: CGFloat, source: DrawerOriginChangeSource)
+    
+    @MainActor
     func snappingView(_ snappingView: SnappingView, didEndUpdatingOrigin origin: CGFloat, source: DrawerOriginChangeSource)
+    
+    @MainActor
     func snappingView(_ snappingView: SnappingView, willBeginAnimation animation: SnappingViewAnimation, source: DrawerOriginChangeSource)
 }
 
@@ -69,11 +76,11 @@ open class SnappingView: UIView {
     }
     
     open func addListener(_ listener: SnappingViewListener) {
-        notifier.subscribe(listener)
+        listeners.insert(listener)
     }
     
     open func removeListener(_ listener: SnappingViewListener) {
-        notifier.unsubscribe(listener)
+        listeners.remove(listener)
     }
     
     @available(*, unavailable)
@@ -91,10 +98,11 @@ open class SnappingView: UIView {
     // MARK: - Private
     
     private enum Static {
+        @MainActor
         static let originEps: CGFloat = 1 / UIScreen.main.scale
     }
     
-    private let notifier = Notifier<SnappingViewListener>()
+    private var listeners = WeakCollection<SnappingViewListener>()
     
     private var containerOriginConstraint: NSLayoutConstraint?
     
@@ -132,15 +140,15 @@ open class SnappingView: UIView {
     
     private func setOrigin(_ origin: CGFloat, source: DrawerOriginChangeSource) {
         self.origin = origin
-        notifier.forEach { $0.snappingView(self, didUpdateOrigin: origin, source: source) }
+        listeners.forEach { $0.snappingView(self, didUpdateOrigin: origin, source: source) }
     }
     
     private func notifyWillBeginUpdatingOrigin(with source: DrawerOriginChangeSource) {
-        notifier.forEach { $0.snappingView(self, willBeginUpdatingOrigin: origin, source: source) }
+        listeners.forEach { $0.snappingView(self, willBeginUpdatingOrigin: origin, source: source) }
     }
     
     private func notifyDidEndUpdatingOrigin(with source: DrawerOriginChangeSource) {
-        notifier.forEach { $0.snappingView(self, didEndUpdatingOrigin: origin, source: source) }
+        listeners.forEach { $0.snappingView(self, didEndUpdatingOrigin: origin, source: source) }
     }
     
     // MARK: - Private: Content
@@ -314,7 +322,7 @@ open class SnappingView: UIView {
         
         self.originAnimation = originAnimation
     
-        notifier.forEach { $0.snappingView(self, willBeginAnimation: originAnimation, source: source) }
+        listeners.forEach { $0.snappingView(self, willBeginAnimation: originAnimation, source: source) }
     }
     
     private func stopOriginAnimation() {

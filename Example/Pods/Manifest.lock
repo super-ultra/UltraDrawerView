@@ -1,5 +1,5 @@
 PODS:
-  - UltraDrawerView (0.7.1)
+  - UltraDrawerView (1.0.0)
 
 DEPENDENCIES:
   - UltraDrawerView (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  UltraDrawerView: 1c44968534466a6bff965b3a7d7d64caec225d48
+  UltraDrawerView: 6142e4ddba5535f61ad97d8efb92693ef3eff401
 
 PODFILE CHECKSUM: cc087438ce029e9b937501385b99a39651026ba8
 

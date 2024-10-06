@@ -1,4 +1,5 @@
 import UIKit
+internal import Combine
 
 #if canImport(UltraDrawerViewObjCUtils)
     import UltraDrawerViewObjCUtils
@@ -7,6 +8,7 @@ import UIKit
 /// It is compatible with any type of UIScrollView and UIScrollViewDelegate:
 /// (e.g. UITableViewDelegate, UICollectionViewDelegateFlowLayout and any other custom type).
 /// Do not overwrite scrollView.delegate, it will be used by ScrollDrawerViewContent.
+@MainActor
 open class ScrollDrawerViewContent: DrawerViewContent {
 
     open var scrollView: UIScrollView {
@@ -58,6 +60,7 @@ open class ScrollDrawerViewContent: DrawerViewContent {
 
 // MARK: - Private Impl
 
+@MainActor
 private class ScrollDrawerViewContentImpl: NSObject {
     
     let scrollView: UIScrollView
@@ -70,35 +73,32 @@ private class ScrollDrawerViewContentImpl: NSObject {
         setupDelegate()
         
         self.scrollViewObservations = [
-            scrollView.observe(\.contentSize, options: [.new, .old]) { [weak self] _, value in
-                guard let self = self, let newValue = value.newValue, value.isChanged else { return }
-                self.notifier.forEach { $0.drawerViewContent(self, didChangeContentSize: newValue) }
+            scrollView.publisher(for: \.contentSize).sink { [weak self] newValue in
+                guard let self else { return }
+                self.listeners.forEach { $0.drawerViewContent(self, didChangeContentSize: newValue) }
             },
-            scrollView.observe(\.contentInset, options: [.new, .old]) { [weak self] _, value in
-                guard let self = self, let newValue = value.newValue, value.isChanged else { return }
-                self.notifier.forEach { $0.drawerViewContent(self, didChangeContentInset: newValue) }
+            scrollView.publisher(for: \.contentInset).sink { [weak self] newValue in
+                guard let self else { return }
+                self.listeners.forEach { $0.drawerViewContent(self, didChangeContentInset: newValue) }
             },
-            scrollView.observe(\.delegate, options: [.new, .old]) { [weak self] _, value in
-                guard let self = self, let old = value.newValue, old !== self.delegateProxy else { return }
+            scrollView.publisher(for: \.delegate).sink { [weak self] newValue in
+                guard let self else { return }
                 self.setupDelegate()
             }
         ]
     }
     
-    deinit {
-        // https://bugs.swift.org/browse/SR-5816
-        scrollViewObservations = []
-    }
-    
     // MARK: - Private
     
-    private let notifier = Notifier<DrawerViewContentListener>()
+    private var listeners = WeakCollection<DrawerViewContentListener>()
     
-    private var scrollViewObservations: [NSKeyValueObservation] = []
+    private var scrollViewObservations: Set<AnyCancellable> = []
     
     private let delegateProxy = SVPrivateScrollDelegateProxy()
     
     private func setupDelegate() {
+        guard scrollView.delegate !== delegateProxy else { return }
+        
         delegateProxy.mainDelegate = self
         delegateProxy.supplementaryDelegate = scrollView.delegate
         
@@ -131,11 +131,11 @@ extension ScrollDrawerViewContentImpl: DrawerViewContent {
     }
     
     func addListener(_ listener: DrawerViewContentListener) {
-        notifier.subscribe(listener)
+        listeners.insert(listener)
     }
     
     func removeListener(_ listener: DrawerViewContentListener) {
-        notifier.unsubscribe(listener)
+        listeners.remove(listener)
     }
     
 }
@@ -143,11 +143,11 @@ extension ScrollDrawerViewContentImpl: DrawerViewContent {
 extension ScrollDrawerViewContentImpl: UIScrollViewDelegate {
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        notifier.forEach { $0.drawerViewContentDidScroll(self) }
+        listeners.forEach { $0.drawerViewContentDidScroll(self) }
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        notifier.forEach { $0.drawerViewContentWillBeginDragging(self) }
+        listeners.forEach { $0.drawerViewContentWillBeginDragging(self) }
     }
     
     func scrollViewWillEndDragging(
@@ -155,7 +155,7 @@ extension ScrollDrawerViewContentImpl: UIScrollViewDelegate {
         withVelocity velocity: CGPoint,
         targetContentOffset: UnsafeMutablePointer<CGPoint>
     ) {
-        notifier.forEach {
+        listeners.forEach {
             $0.drawerViewContentWillEndDragging(self, withVelocity: velocity, targetContentOffset: targetContentOffset)
         }
     }

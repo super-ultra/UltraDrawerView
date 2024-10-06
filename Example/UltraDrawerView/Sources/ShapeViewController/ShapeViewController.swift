@@ -74,7 +74,7 @@ final class ShapeViewController: UIViewController {
     override func viewSafeAreaInsetsDidChange() {
         super.viewSafeAreaInsetsDidChange()
         tableView.contentInset.bottom = view.safeAreaInsets.bottom
-        tableView.scrollIndicatorInsets.bottom = view.safeAreaInsets.bottom
+        tableView.verticalScrollIndicatorInsets.bottom = view.safeAreaInsets.bottom
     }
     
     // MARK: - Private
@@ -96,34 +96,28 @@ final class ShapeViewController: UIViewController {
             drawerView.rightAnchor.constraint(equalTo: view.rightAnchor),
         ]
         
-        let landscapeLeftAnchor: NSLayoutXAxisAnchor
-        if #available(iOS 11.0, *) {
-            landscapeLeftAnchor = view.safeAreaLayoutGuide.leftAnchor
-        } else {
-            landscapeLeftAnchor = view.leftAnchor
-        }
-        
         landscapeConstraints = [
             drawerView.topAnchor.constraint(equalTo: view.topAnchor),
-            drawerView.leftAnchor.constraint(equalTo: landscapeLeftAnchor, constant: 16),
+            drawerView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16),
             drawerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             drawerView.widthAnchor.constraint(equalToConstant: 320),
         ]
     }
     
     private func updateLayoutWithCurrentOrientation() {
-        let orientation = UIDevice.current.orientation
-        
-        if orientation.isLandscape {
+        switch UIDevice.current.orientation {
+        case .landscapeLeft, .landscapeRight:
             portraitConstraints.forEach { $0.isActive = false }
             landscapeConstraints.forEach { $0.isActive = true }
             drawerView.topPosition = .fromTop(Layout.topInsetLandscape)
             drawerView.availableStates = [.top, .bottom]
-        } else if orientation.isPortrait {
+        case .portrait, .portraitUpsideDown, .faceUp, .faceDown, .unknown:
             landscapeConstraints.forEach { $0.isActive = false }
             portraitConstraints.forEach { $0.isActive = true }
             drawerView.topPosition = .fromTop(Layout.topInsetPortrait)
             drawerView.availableStates = [.top, .middle, .bottom]
+        @unknown default:
+            break
         }
     }
 
