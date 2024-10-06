@@ -74,7 +74,7 @@ final class ShapeViewController: UIViewController {
     override func viewSafeAreaInsetsDidChange() {
         super.viewSafeAreaInsetsDidChange()
         tableView.contentInset.bottom = view.safeAreaInsets.bottom
-        tableView.scrollIndicatorInsets.bottom = view.safeAreaInsets.bottom
+        tableView.verticalScrollIndicatorInsets.bottom = view.safeAreaInsets.bottom
     }
     
     // MARK: - Private

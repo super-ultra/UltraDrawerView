@@ -1,4 +1,5 @@
 import UIKit
+internal import Combine
 
 public protocol DrawerViewListener: AnyObject {
     func drawerView(_ drawerView: DrawerView, willBeginUpdatingOrigin origin: CGFloat, source: DrawerOriginChangeSource)
@@ -8,6 +9,7 @@ public protocol DrawerViewListener: AnyObject {
     func drawerView(_ drawerView: DrawerView, willBeginAnimationToState state: DrawerView.State?, source: DrawerOriginChangeSource)
 }
 
+@MainActor
 open class DrawerView: UIView {
 
     public typealias Content = DrawerViewContent
@@ -213,21 +215,16 @@ open class DrawerView: UIView {
     }
     
     open func addListener(_ listener: DrawerViewListener) {
-        notifier.subscribe(listener)
+        listeners.insert(listener)
     }
     
     open func removeListener(_ listener: DrawerViewListener) {
-        notifier.unsubscribe(listener)
+        listeners.remove(listener)
     }
     
     @available(*, unavailable)
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    deinit {
-        // https://bugs.swift.org/browse/SR-5816
-        headerObservation = nil
     }
     
     // MARK: - UIView
@@ -266,21 +263,21 @@ open class DrawerView: UIView {
     private var state_: State? {
         didSet {
             if state_ != oldValue {
-                notifier.forEach { $0.drawerView(self, didChangeState: state_) }
+                listeners.forEach { $0.drawerView(self, didChangeState: state_) }
             }
         }
     }
     
-    private let notifier = Notifier<DrawerViewListener>()
+    private var listeners = WeakCollection<DrawerViewListener>()
     
-    private var headerObservation: NSKeyValueObservation?
+    private var headerObservation: AnyCancellable?
 
     private func setupViews() {
         addSubview(snappingView)
         snappingView.frame = bounds
         snappingView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
-        headerObservation = headerView.observe(\.bounds, options: .new) { [weak self] _, _ in
+        headerObservation = headerView.publisher(for: \.bounds).sink { [weak self] _ in
             self?.updateAnchors()
         }
     }
@@ -448,7 +445,7 @@ extension DrawerView: SnappingViewListener {
         willBeginUpdatingOrigin origin: CGFloat,
         source: DrawerOriginChangeSource
     ) {
-        notifier.forEach { $0.drawerView(self, willBeginUpdatingOrigin: origin, source: source) }
+        listeners.forEach { $0.drawerView(self, willBeginUpdatingOrigin: origin, source: source) }
     }
 
     public func snappingView(
@@ -457,7 +454,7 @@ extension DrawerView: SnappingViewListener {
         source: DrawerOriginChangeSource
     ) {
         updateContentVisibility()
-        notifier.forEach { $0.drawerView(self, didUpdateOrigin: origin, source: source) }
+        listeners.forEach { $0.drawerView(self, didUpdateOrigin: origin, source: source) }
     }
     
     public func snappingView(
@@ -468,7 +465,7 @@ extension DrawerView: SnappingViewListener {
         let targetState = state(forOrigin: animation.targetOrigin)
         animationSession_ = AnimationSession(animation: animation, targetState: targetState)
         
-        notifier.forEach { $0.drawerView(self, willBeginAnimationToState: targetState, source: source) }
+        listeners.forEach { $0.drawerView(self, willBeginAnimationToState: targetState, source: source) }
     }
 
     public func snappingView(
@@ -482,7 +479,7 @@ extension DrawerView: SnappingViewListener {
         
         animationSession_ = nil
         
-        notifier.forEach { $0.drawerView(self, didEndUpdatingOrigin: origin, source: source) }
+        listeners.forEach { $0.drawerView(self, didEndUpdatingOrigin: origin, source: source) }
     }
     
 }
