@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,17 @@
 		B12625FD2128DE7D00DBBDFA /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12625FC2128DE7D00DBBDFA /* UIColor+Utils.swift */; };
 		B147864D212A23250042CFA9 /* ShapeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B147864C212A23250042CFA9 /* ShapeHeaderView.swift */; };
 		B147864F212A25280042CFA9 /* ShapeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B147864E212A25280042CFA9 /* ShapeCell.swift */; };
+		B1DD05A12CB2B53800712F3F /* UIBezierPath+Polygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E838B6212AC7530096B227 /* UIBezierPath+Polygon.swift */; };
+		B1DD05A22CB2B53800712F3F /* ShapeCell+DefaultInfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EB167A21442D90005F4612 /* ShapeCell+DefaultInfos.swift */; };
+		B1DD05A32CB2B53800712F3F /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12625FC2128DE7D00DBBDFA /* UIColor+Utils.swift */; };
+		B1DD05A42CB2B53800712F3F /* ShapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ShapeViewController.swift */; };
+		B1DD05A52CB2B53800712F3F /* ShapeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B147864C212A23250042CFA9 /* ShapeHeaderView.swift */; };
+		B1DD05A62CB2B53800712F3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
+		B1DD05A72CB2B53800712F3F /* ShapeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B147864E212A25280042CFA9 /* ShapeCell.swift */; };
+		B1DD05AB2CB2B53800712F3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
+		B1DD05AC2CB2B53800712F3F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
+		B1DD05AD2CB2B53800712F3F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
+		B1DD05B92CB2B7B500712F3F /* UltraDrawerView in Frameworks */ = {isa = PBXBuildFile; productRef = B1DD05B82CB2B7B500712F3F /* UltraDrawerView */; };
 		B1E838B7212AC7530096B227 /* UIBezierPath+Polygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E838B6212AC7530096B227 /* UIBezierPath+Polygon.swift */; };
 		B1EB167B21442D90005F4612 /* ShapeCell+DefaultInfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EB167A21442D90005F4612 /* ShapeCell+DefaultInfos.swift */; };
 /* End PBXBuildFile section */
@@ -53,6 +64,8 @@
 		B12625FC2128DE7D00DBBDFA /* UIColor+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
 		B147864C212A23250042CFA9 /* ShapeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeHeaderView.swift; sourceTree = "<group>"; };
 		B147864E212A25280042CFA9 /* ShapeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeCell.swift; sourceTree = "<group>"; };
+		B1DD05B32CB2B53800712F3F /* UltraDrawerView_SwiftPMExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltraDrawerView_SwiftPMExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1DD05B42CB2B53800712F3F /* UltraDrawerView_Example copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "UltraDrawerView_Example copy-Info.plist"; path = "/Users/ultra/Dev/UltraDrawerView/Example/UltraDrawerView_Example copy-Info.plist"; sourceTree = "<absolute>"; };
 		B1E838B6212AC7530096B227 /* UIBezierPath+Polygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBezierPath+Polygon.swift"; sourceTree = "<group>"; };
 		B1EB167A21442D90005F4612 /* ShapeCell+DefaultInfos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShapeCell+DefaultInfos.swift"; sourceTree = "<group>"; };
 		B99568CF0BF26DEE96C28525 /* Pods_UltraDrawerView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UltraDrawerView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +86,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				14BD5D64E6E20DD39100F71A /* Pods_UltraDrawerView_Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1DD05A82CB2B53800712F3F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1DD05B92CB2B7B500712F3F /* UltraDrawerView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +118,7 @@
 				607FACD11AFB9204008FA782 /* Products */,
 				65727038F55B82BDF83622DE /* Pods */,
 				5D5037D38CF7545C1B3A1C58 /* Frameworks */,
+				B1DD05B42CB2B53800712F3F /* UltraDrawerView_Example copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +127,7 @@
 			children = (
 				607FACD01AFB9204008FA782 /* UltraDrawerView_Example.app */,
 				607FACE51AFB9204008FA782 /* UltraDrawerView_Tests.xctest */,
+				B1DD05B32CB2B53800712F3F /* UltraDrawerView_SwiftPMExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -241,14 +264,33 @@
 			productReference = 607FACE51AFB9204008FA782 /* UltraDrawerView_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		B1DD059E2CB2B53800712F3F /* UltraDrawerView_SwiftPMExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B1DD05B02CB2B53800712F3F /* Build configuration list for PBXNativeTarget "UltraDrawerView_SwiftPMExample" */;
+			buildPhases = (
+				B1DD05A02CB2B53800712F3F /* Sources */,
+				B1DD05A82CB2B53800712F3F /* Frameworks */,
+				B1DD05AA2CB2B53800712F3F /* Resources */,
+				B1DD05AF2CB2B53800712F3F /* Check Formatting using SwiftFormat */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UltraDrawerView_SwiftPMExample;
+			productName = UltraDrawerView;
+			productReference = B1DD05B32CB2B53800712F3F /* UltraDrawerView_SwiftPMExample.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 1230;
+				LastUpgradeCheck = 1600;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
@@ -273,11 +315,15 @@
 				Base,
 			);
 			mainGroup = 607FACC71AFB9204008FA782;
+			packageReferences = (
+				B1DD05B52CB2B56B00712F3F /* XCLocalSwiftPackageReference "../../UltraDrawerView" */,
+			);
 			productRefGroup = 607FACD11AFB9204008FA782 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				607FACCF1AFB9204008FA782 /* UltraDrawerView_Example */,
+				B1DD059E2CB2B53800712F3F /* UltraDrawerView_SwiftPMExample */,
 				607FACE41AFB9204008FA782 /* UltraDrawerView_Tests */,
 			);
 		};
@@ -298,6 +344,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1DD05AA2CB2B53800712F3F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1DD05AB2CB2B53800712F3F /* Main.storyboard in Resources */,
+				B1DD05AC2CB2B53800712F3F /* LaunchScreen.xib in Resources */,
+				B1DD05AD2CB2B53800712F3F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +399,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UltraDrawerView_Example/Pods-UltraDrawerView_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		B1DD05AF2CB2B53800712F3F /* Check Formatting using SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Check Formatting using SwiftFormat";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftformat >/dev/null; then\n    swiftformat --lint --lenient ${PROJECT_DIR} --config ${PROJECT_DIR}/../.swiftformat\n    swiftformat --lint --lenient ${PROJECT_DIR}/../Sources --config ${PROJECT_DIR}/../.swiftformat\nelse\n    echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
 		};
 		B1F4710225B4C94F00C805DA /* Check Formatting using SwiftFormat */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -406,6 +480,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				B123371125B3A8260086C1E5 /* UltraDrawerViewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1DD05A02CB2B53800712F3F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1DD05A12CB2B53800712F3F /* UIBezierPath+Polygon.swift in Sources */,
+				B1DD05A22CB2B53800712F3F /* ShapeCell+DefaultInfos.swift in Sources */,
+				B1DD05A32CB2B53800712F3F /* UIColor+Utils.swift in Sources */,
+				B1DD05A42CB2B53800712F3F /* ShapeViewController.swift in Sources */,
+				B1DD05A52CB2B53800712F3F /* ShapeHeaderView.swift in Sources */,
+				B1DD05A62CB2B53800712F3F /* AppDelegate.swift in Sources */,
+				B1DD05A72CB2B53800712F3F /* ShapeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +561,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -530,6 +619,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -541,7 +631,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -556,7 +647,10 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = UltraDrawerView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.example.UltraDrawerView-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -576,7 +670,10 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = UltraDrawerView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.example.UltraDrawerView-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -601,7 +698,11 @@
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -623,7 +724,11 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -631,6 +736,48 @@
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UltraDrawerView_Example.app/UltraDrawerView_Example";
+			};
+			name = Release;
+		};
+		B1DD05B12CB2B53800712F3F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FA2C1894888A100093DE9ED /* Pods-UltraDrawerView_Example.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "UltraDrawerView_Example copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MERGED_BINARY_TYPE = automatic;
+				MODULE_NAME = ExampleApp;
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.example.UltraDrawerView-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B1DD05B22CB2B53800712F3F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFD43754B3183CD1CF744262 /* Pods-UltraDrawerView_Example.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "UltraDrawerView_Example copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MERGED_BINARY_TYPE = automatic;
+				MODULE_NAME = ExampleApp;
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.example.UltraDrawerView-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -664,7 +811,31 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		B1DD05B02CB2B53800712F3F /* Build configuration list for PBXNativeTarget "UltraDrawerView_SwiftPMExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1DD05B12CB2B53800712F3F /* Debug */,
+				B1DD05B22CB2B53800712F3F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		B1DD05B52CB2B56B00712F3F /* XCLocalSwiftPackageReference "../../UltraDrawerView" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../UltraDrawerView;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B1DD05B82CB2B7B500712F3F /* UltraDrawerView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B1DD05B52CB2B56B00712F3F /* XCLocalSwiftPackageReference "../../UltraDrawerView" */;
+			productName = UltraDrawerView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 607FACC81AFB9204008FA782 /* Project object */;
 }
