@@ -45,9 +45,9 @@
 
 /* Begin PBXFileReference section */
 		06F5DA8CAC4EE8683D4D1754 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		2F1DCD8627994138490ADB49 /* Pods-UltraDrawerView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UltraDrawerView_Example.release.xcconfig"; path = "Target Support Files/Pods-UltraDrawerView_Example/Pods-UltraDrawerView_Example.release.xcconfig"; sourceTree = "<group>"; };
 		3B309624FF03775A6F6A67AF /* Pods_UltraDrawerView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UltraDrawerView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55639557888D990AD7C4EFCE /* Pods-UltraDrawerView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UltraDrawerView_Tests.release.xcconfig"; path = "Target Support Files/Pods-UltraDrawerView_Tests/Pods-UltraDrawerView_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		5FA2C1894888A100093DE9ED /* Pods-UltraDrawerView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UltraDrawerView_Example.debug.xcconfig"; path = "Target Support Files/Pods-UltraDrawerView_Example/Pods-UltraDrawerView_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* UltraDrawerView_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltraDrawerView_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,8 +58,8 @@
 		607FACE51AFB9204008FA782 /* UltraDrawerView_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UltraDrawerView_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98B7C15332F9CC9E1E763DD5 /* UltraDrawerView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = UltraDrawerView.podspec; path = ../UltraDrawerView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A7B2A88920F31532748AF53F /* Pods-UltraDrawerView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UltraDrawerView_Example.debug.xcconfig"; path = "Target Support Files/Pods-UltraDrawerView_Example/Pods-UltraDrawerView_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		AF3DC9C31C5F6025401A1BBF /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		AFD43754B3183CD1CF744262 /* Pods-UltraDrawerView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UltraDrawerView_Example.release.xcconfig"; path = "Target Support Files/Pods-UltraDrawerView_Example/Pods-UltraDrawerView_Example.release.xcconfig"; sourceTree = "<group>"; };
 		B123371025B3A8260086C1E5 /* UltraDrawerViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UltraDrawerViewTests.swift; sourceTree = "<group>"; };
 		B12625FC2128DE7D00DBBDFA /* UIColor+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
 		B147864C212A23250042CFA9 /* ShapeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeHeaderView.swift; sourceTree = "<group>"; };
@@ -183,10 +183,10 @@
 		65727038F55B82BDF83622DE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5FA2C1894888A100093DE9ED /* Pods-UltraDrawerView_Example.debug.xcconfig */,
-				AFD43754B3183CD1CF744262 /* Pods-UltraDrawerView_Example.release.xcconfig */,
 				C2C20B3FB165E698E5AFE984 /* Pods-UltraDrawerView_Tests.debug.xcconfig */,
 				55639557888D990AD7C4EFCE /* Pods-UltraDrawerView_Tests.release.xcconfig */,
+				A7B2A88920F31532748AF53F /* Pods-UltraDrawerView_Example.debug.xcconfig */,
+				2F1DCD8627994138490ADB49 /* Pods-UltraDrawerView_Example.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -561,7 +561,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -619,7 +619,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -639,7 +639,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5FA2C1894888A100093DE9ED /* Pods-UltraDrawerView_Example.debug.xcconfig */;
+			baseConfigurationReference = A7B2A88920F31532748AF53F /* Pods-UltraDrawerView_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -662,7 +662,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AFD43754B3183CD1CF744262 /* Pods-UltraDrawerView_Example.release.xcconfig */;
+			baseConfigurationReference = 2F1DCD8627994138490ADB49 /* Pods-UltraDrawerView_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -741,7 +741,6 @@
 		};
 		B1DD05B12CB2B53800712F3F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5FA2C1894888A100093DE9ED /* Pods-UltraDrawerView_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -762,7 +761,6 @@
 		};
 		B1DD05B22CB2B53800712F3F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AFD43754B3183CD1CF744262 /* Pods-UltraDrawerView_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
